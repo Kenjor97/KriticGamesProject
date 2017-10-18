@@ -1,2 +1,2 @@
 # KriticGamesProject
-Proyecto videojuego 2D, plataformas
+Videogame Project

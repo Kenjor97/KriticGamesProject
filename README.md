@@ -1,7 +1,7 @@
 # KriticGamesProject
-*TO DO
--header/banner image
--project name and description
--project features
--contact information (social network)
--license
+## Insert
+- Header/Banner Image
+- Project Name and Description
+- Project Features
+- Contact Information (Social Network)
+- License

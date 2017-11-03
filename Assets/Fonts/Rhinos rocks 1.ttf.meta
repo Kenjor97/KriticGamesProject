@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a6a9e78fcfd99ea42bb5125afa4a8b29
+timeCreated: 1490967622
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Rhinos rocks
+  fontNames:
+  - Rhinos rocks
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

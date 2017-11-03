@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 588493338}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 512
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad7a969d3d77494db9ffcd196c65dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 588493338}
+  player: {fileID: 0}
 --- !u!4 &1685141390
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,4 @@
-# KriticGamesProject
-
-- Header/Banner Image
+![alt text](WikiResources/Banner2.png)
 
 ## Project Name and Description
 

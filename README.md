@@ -1,5 +1,5 @@
 # KriticGamesProject
-## Insert
+
 - Header/Banner Image
 
 ## Project Name and Description

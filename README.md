@@ -9,8 +9,6 @@ Run, jump, get powerups, kill enemies, destroy props, and save the kingdom!
 Please visit our [Wiki](https://github.com/Kenjor97/KriticGamesProject/wiki) for more info.
 ## Contact Information
 
-- adriangarciagago@gmail.com
-- jasonchiewsam@gmail.com
 
 ## License
 This project is under a MIT License. Check [License](https://github.com/Kenjor97/KriticGamesProject/blob/master/LICENSE) for more info.

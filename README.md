@@ -1,14 +1,17 @@
 ![alt text](WikiResources/banner.png)
 
 ## Description
-Blacksmith Fury is a 2.5D platform game, cartoon style, set in a medieval world where the main character must obtain different powerups or items to advance through 3 metroidvania style sectors levels, finally facing the final boss who conquered the kingdom with his army of puppets.
+Blacksmith Fury is a 2.5D platform game, cartoon style, set in a medieval era where the main character must obtain different powerups or items to advance through 3 metroidvania style sectors levels, finally facing the final boss who conquered the kingdom with his army of puppets.
 ## Features
-2D characters and 3D Environment.
-Run, jump, get powerups, kill enemies, destroy props, and save the kingdom!
+* 2D Characters and 3D Environment.
+* Medieval scenarios.
+* Run, jump, get powerups, kill enemies, destroy props, and save the kingdom!
 
-Please visit our [Wiki](https://github.com/Kenjor97/KriticGamesProject/wiki) for more info.
+Please check our [Wiki](https://github.com/Kenjor97/KriticGamesProject/wiki) for more info.
 ## Contact Information
+<img align="left" src="https://github.com/Kenjor97/KriticGamesProject/blob/master/WikiResources/Gmail.png" width=32> @gmail.com
 
+<img align="left" src="https://github.com/Kenjor97/KriticGamesProject/blob/master/WikiResources/Twitter.png" width=32> [@](https://twitter.com)
 
 ## License
-This project is under a MIT License. Check [License](https://github.com/Kenjor97/KriticGamesProject/blob/master/LICENSE) for more info.
+This project is under a MIT License. Please check [License](https://github.com/Kenjor97/KriticGamesProject/blob/master/LICENSE) for more info.

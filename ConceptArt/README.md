@@ -35,3 +35,7 @@
 
 ## Environment  
 
+![](https://github.com/Kenjor97/KriticGamesProject/blob/master/ConceptArt/concept_enviroment_screen_01.png)
+
+
+![](https://github.com/Kenjor97/KriticGamesProject/blob/master/ConceptArt/concept_enviroment_screen_02.png)

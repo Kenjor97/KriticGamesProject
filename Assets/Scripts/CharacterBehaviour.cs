@@ -7,6 +7,7 @@ public class CharacterBehaviour : MonoBehaviour
 {
     public enum State { Default, Dead, GodMode }
     public State state;
+    public CameraBehaviour cameraBehaviour;
     [Header("State")]
     public bool canMove = true;
     public bool canJump = true;
@@ -16,6 +17,7 @@ public class CharacterBehaviour : MonoBehaviour
     public bool crouch = false;
     public bool isLookingUp = false;
     public bool isLookingDown = false;
+    public bool doubleJump = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
@@ -126,6 +128,7 @@ public class CharacterBehaviour : MonoBehaviour
         isFacingRight = !isFacingRight;
         rend.flipX = !rend.flipX;
         collisions.Flip(isFacingRight);
+        cameraBehaviour.offSet.x *= -1;
     }
 
     #region Public

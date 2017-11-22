@@ -1,4 +1,4 @@
 ## PRE-ALPHA
-- [ ] Game Design Document to Wiki
-- [ ] Concept Art
-- [ ] Mockups
+- [x] Game Design Document to Wiki
+- [x] Concept Art
+- [x] Mockups

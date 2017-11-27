@@ -23,7 +23,7 @@ public class CameraBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 newPosition = target.position + new Vector3(offSet.x, offSet.y, -10);
+        Vector3 newPosition = target.position + new Vector3(offSet.x, offSet.y, -15);
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 }

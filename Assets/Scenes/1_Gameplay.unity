@@ -412,6 +412,7 @@ MonoBehaviour:
   doubleJump: 0
   rb: {fileID: 588493337}
   collisions: {fileID: 588493340}
+  collider2d: {fileID: 588493336}
   walkSpeed: 3
   runSpeed: 5
   movementSpeed: 0

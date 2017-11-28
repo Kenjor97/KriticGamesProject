@@ -21,6 +21,7 @@ public class CharacterBehaviour : MonoBehaviour
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
+    public Collider2D collider2d;
     [Header("Speed")]
     public float walkSpeed;
     public float runSpeed;
@@ -38,6 +39,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         collisions = GetComponent<Collisions>();
         rb = GetComponent<Rigidbody2D>();
+        collider2d = GetComponent<BoxCollider2D>();
 	}
 	
 	void Update ()
@@ -127,6 +129,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
         rend.flipX = !rend.flipX;
+        collider2d.offset = new Vector2(collider2d.offset.x * -1, collider2d.offset.y);
         collisions.Flip(isFacingRight);
         cameraBehaviour.offSet.x *= -1;
     }

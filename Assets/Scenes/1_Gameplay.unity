@@ -409,7 +409,7 @@ MonoBehaviour:
   crouch: 0
   isLookingUp: 0
   isLookingDown: 0
-  doubleJump: 0
+  canDoubleJump: 0
   rb: {fileID: 588493337}
   collisions: {fileID: 588493340}
   collider2d: {fileID: 588493336}
@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6cc321664165e468304c7aff480c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 588493338}
   isGrounded: 0
   wasGroundedLastFrame: 0
   justGotGrounded: 0

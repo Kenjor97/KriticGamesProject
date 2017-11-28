@@ -17,7 +17,7 @@ public class CharacterBehaviour : MonoBehaviour
     public bool crouch = false;
     public bool isLookingUp = false;
     public bool isLookingDown = false;
-    public bool doubleJump = false;
+    public bool canDoubleJump = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
@@ -77,6 +77,7 @@ public class CharacterBehaviour : MonoBehaviour
         // Calcular el movimiento horizontal
         HorizontalMovement();
         // Calcular el movimiento vertical
+        VerticalMovement();
     }
 
     void HorizontalMovement()
@@ -125,6 +126,11 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isJumping = true;
     }
+    void DoubleJump()
+    {
+        isJumping = true;
+        canDoubleJump = false;
+    }
     void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -153,6 +159,13 @@ public class CharacterBehaviour : MonoBehaviour
             if(isRunning) jumpForce = jumpRunForce;
             else jumpForce = jumpWalkForce;
             Jump();
+        }
+
+        if(collisions.isFalling && canDoubleJump)
+        {
+            if(isRunning) jumpForce = jumpRunForce;
+            else jumpForce = jumpWalkForce;
+            DoubleJump();
         }
     }
     #endregion

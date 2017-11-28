@@ -57,7 +57,10 @@ public class InputManager : MonoBehaviour
             Debug.Log("Walk");
         }
     }
-
+    /*void InputCrouch()
+    {
+        if(Input.GetButtonDown(""))
+    }*/
     void InputGodMode()
     {
 

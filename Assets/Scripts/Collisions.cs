@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Collisions : MonoBehaviour
 {
+    public CharacterBehaviour player;
+
     [Header("Ground State")]
     public bool isGrounded;
     public bool wasGroundedLastFrame;
@@ -86,8 +88,16 @@ public class Collisions : MonoBehaviour
         {
             isGrounded = true;
         }
-        if(!wasGroundedLastFrame && isGrounded) justGotGrounded = true;
-        if(wasGroundedLastFrame && !isGrounded) justNotGrounded = true;
+        if(!wasGroundedLastFrame && isGrounded)
+        {
+            justGotGrounded = true;
+            player.canDoubleJump = false;
+        }
+        if(wasGroundedLastFrame && !isGrounded)
+        {
+            justNotGrounded = true;
+            player.canDoubleJump = true;
+        }
 
         if(justNotGrounded) Debug.Log("JUST NOT GROUNDED");
         if(justGotGrounded) Debug.Log("just got grounded");

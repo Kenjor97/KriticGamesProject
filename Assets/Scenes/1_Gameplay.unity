@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641383, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641347, b: 0.57481503, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.084251136, y: 0.84289145}
+  m_Offset: {x: -0.084251136, y: 0.843}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -366,7 +366,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1685021, y: 1.4401379}
+  m_Size: {x: 1.1685021, y: 1.44}
   m_EdgeRadius: 0.1
 --- !u!50 &588493337
 Rigidbody2D:
@@ -422,6 +422,10 @@ MonoBehaviour:
   jumpRunForce: 5
   jumpForce: 5
   rend: {fileID: 411370520}
+  standYSize: 0
+  crouchYSize: 0
+  standYOffset: 0
+  crouchYOffset: 0
 --- !u!4 &588493339
 Transform:
   m_ObjectHideFlags: 0

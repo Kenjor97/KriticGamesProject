@@ -21,7 +21,7 @@ public class CharacterBehaviour : MonoBehaviour
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
-    public Collider2D collider2d;
+    public BoxCollider2D collider2d;
     [Header("Speed")]
     public float walkSpeed;
     public float runSpeed;
@@ -34,12 +34,21 @@ public class CharacterBehaviour : MonoBehaviour
     public float jumpForce;
     [Header("Graphics")]
     public SpriteRenderer rend;
+    [Header("Collider Values")]
+    public float standYSize;
+    public float crouchYSize;
+    public float standYOffset;
+    public float crouchYOffset;
     
     void Start ()
     {
         collisions = GetComponent<Collisions>();
         rb = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<BoxCollider2D>();
+        standYSize = collider2d.size.y;
+        crouchYSize = collider2d.size.y / 2;
+        standYOffset = collider2d.offset.y;
+        crouchYOffset = collider2d.offset.y / 2 + 0.065f;
 	}
 	
 	void Update ()
@@ -70,6 +79,18 @@ public class CharacterBehaviour : MonoBehaviour
         }
 
         rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
+
+        if (crouch)
+        {
+            collider2d.size = new Vector2(collider2d.size.x, crouchYSize);
+            collider2d.offset = new Vector2(collider2d.offset.x, crouchYOffset);
+        }
+        else
+        {
+            crouch = false;
+            collider2d.size = new Vector2(collider2d.size.x, standYSize);
+            collider2d.offset = new Vector2(collider2d.offset.x, standYOffset);
+        }
     }
 
     protected virtual void DefaultUpdate()
@@ -139,6 +160,10 @@ public class CharacterBehaviour : MonoBehaviour
         collisions.Flip(isFacingRight);
         cameraBehaviour.offSet.x *= -1;
     }
+    void Crouching()
+    {
+        crouch = true;
+    }
 
     #region Public
     public void SetAxis(Vector2 inputAxis)
@@ -166,6 +191,13 @@ public class CharacterBehaviour : MonoBehaviour
             if(isRunning) jumpForce = jumpRunForce;
             else jumpForce = jumpWalkForce;
             DoubleJump();
+        }
+    }
+    public void Crouch()
+    {
+        if (collisions.isGrounded)
+        {
+            Crouching();
         }
     }
     #endregion

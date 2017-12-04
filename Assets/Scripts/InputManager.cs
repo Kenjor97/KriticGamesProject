@@ -23,6 +23,8 @@ public class InputManager : MonoBehaviour
         InputJump();
         // alternar entre caminar y correr para el player
         InputRun();
+        // alternar entre agachado y no agachado
+        InputCrouch();
 	}
 
     void InputPause()
@@ -57,10 +59,14 @@ public class InputManager : MonoBehaviour
             Debug.Log("Walk");
         }
     }
-    /*void InputCrouch()
+    void InputCrouch()
     {
-        if(Input.GetButtonDown(""))
-    }*/
+        if(Input.GetButton("Crouch"))
+        {
+            Debug.Log("Crouch");
+            player.Crouch();
+        }
+    }
     void InputGodMode()
     {
 

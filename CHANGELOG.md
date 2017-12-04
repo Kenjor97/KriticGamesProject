@@ -4,14 +4,14 @@
 - [x] Mockups
 ## ALPHA - [Project Checklist](https://drive.google.com/file/d/1uBzJVtQnFzZMntfmkd8HjcCFibLC9k9t/view) for more info
 ### Design
-- [ ] Level Design Map
-- [ ] Concept Art Characters and Environment
+- [x] Level Design Map
+- [x] Concept Art Characters and Environment
 - [ ] Character Thumbnails
 - [ ] Props Thumbnails
 - [ ] Characters Size Chart
 - [ ] Level Props Size Chart
-- [ ] Level Flow Map
-- [ ] Screen Mockups
+- [x] Level Flow Map
+- [x] Screen Mockups
 ### General
 - [ ] General Phase 1: Transition animation between scenes.
 - [ ] General Phase 2: GOD Mode implemented.

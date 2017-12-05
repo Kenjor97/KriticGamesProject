@@ -15,9 +15,10 @@ public class CharacterBehaviour : MonoBehaviour
     public bool isJumping = false;
     public bool isRunning = false;
     public bool crouch = false;
-    public bool isLookingUp = false;
-    public bool isLookingDown = false;
+    //public bool isLookingUp = false;
+    //public bool isLookingDown = false;
     public bool canDoubleJump = false;
+    public bool onLadder = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
@@ -27,6 +28,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float runSpeed;
     public float movementSpeed;
     public float horizontalSpeed;
+    public float onLadderSpeed;
+    public float verticalSpeed;
     public Vector2 axis;
     [Header("Forces")]
     public float jumpWalkForce;
@@ -79,6 +82,11 @@ public class CharacterBehaviour : MonoBehaviour
         }
 
         rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
+
+        if(onLadder)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, verticalSpeed);
+        }
 
         if (crouch)
         {
@@ -142,8 +150,14 @@ public class CharacterBehaviour : MonoBehaviour
     void VerticalMovement()
     {
         crouch = false;
-        isLookingDown = false;
-        isLookingUp = false;
+        //isLookingDown = false;
+        //isLookingUp = false;
+
+        if(onLadder)
+        {
+            canDoubleJump = false;
+            verticalSpeed = axis.y * onLadderSpeed;
+        }
     }
     void Jump()
     {
@@ -166,7 +180,22 @@ public class CharacterBehaviour : MonoBehaviour
     {
         crouch = true;
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("ladder"))
+        {
+            onLadder = true;
+            rb.gravityScale = 0;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("ladder"))
+        {
+            onLadder = false;
+            rb.gravityScale = 1;
+        }
+    }
     #region Public
     public void SetAxis(Vector2 inputAxis)
     {
@@ -178,10 +207,10 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(collisions.isGrounded)
         {
-            if(isLookingDown)
+            /*if(isLookingDown)
             {
                 Debug.Log("bajar plataforma");
-            }
+            }*/
 
             if(isRunning) jumpForce = jumpRunForce;
             else jumpForce = jumpWalkForce;

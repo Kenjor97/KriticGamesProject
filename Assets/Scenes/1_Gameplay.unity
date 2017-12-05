@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641347, b: 0.57481503, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641383, b: 0.5748164, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 444645092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.75, y: 1.5, z: 0}
+  m_LocalPosition: {x: -10.994, y: 3.5, z: 0}
   m_LocalScale: {x: 26.975004, y: 1, z: 1}
   m_Children:
   - {fileID: 1809197112}
@@ -492,9 +492,8 @@ MonoBehaviour:
   isJumping: 0
   isRunning: 0
   crouch: 0
-  isLookingUp: 0
-  isLookingDown: 0
   canDoubleJump: 0
+  onLadder: 0
   rb: {fileID: 588493337}
   collisions: {fileID: 588493340}
   collider2d: {fileID: 588493336}
@@ -502,6 +501,8 @@ MonoBehaviour:
   runSpeed: 5
   movementSpeed: 0
   horizontalSpeed: 0
+  onLadderSpeed: 3
+  verticalSpeed: 0
   axis: {x: 0, y: 0}
   jumpWalkForce: 5
   jumpRunForce: 5
@@ -840,9 +841,9 @@ GameObject:
   m_Component:
   - component: {fileID: 968597267}
   - component: {fileID: 968597266}
-  - component: {fileID: 968597265}
   - component: {fileID: 968597264}
-  m_Layer: 9
+  - component: {fileID: 968597265}
+  m_Layer: 10
   m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +864,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1e4f88a1f4f45654ca2156911d54c94b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -883,18 +884,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &968597265
-BoxCollider:
+--- !u!61 &968597265
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968597263}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.0000001}
+  m_EdgeRadius: 0
 --- !u!33 &968597266
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -909,8 +923,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968597263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -0.1, z: 0}
-  m_LocalScale: {x: 1.5749999, y: 4.3249993, z: 1}
+  m_LocalPosition: {x: -3.5, y: 1, z: 0.4}
+  m_LocalScale: {x: 1.5, y: 6.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1141,7 +1155,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1374597231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.75, y: 1.5, z: 0}
+  m_LocalPosition: {x: 3.994, y: 3.5, z: 0}
   m_LocalScale: {x: 26.975004, y: 1, z: 1}
   m_Children:
   - {fileID: 966984175}

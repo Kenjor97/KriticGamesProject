@@ -82,11 +82,13 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (crouch)
         {
+            canMove = false;
             collider2d.size = new Vector2(collider2d.size.x, crouchYSize);
             collider2d.offset = new Vector2(collider2d.offset.x, crouchYOffset);
         }
         else
         {
+            canMove = true;
             crouch = false;
             collider2d.size = new Vector2(collider2d.size.x, standYSize);
             collider2d.offset = new Vector2(collider2d.offset.x, standYOffset);

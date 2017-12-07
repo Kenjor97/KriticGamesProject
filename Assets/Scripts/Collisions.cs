@@ -140,31 +140,7 @@ public class Collisions : MonoBehaviour
         if (justNotCeiled) Debug.Log("JUST NOT CEILED");
         if (justGotCeiled) Debug.Log("just got ceiled");
     }
-    //void LadderDetection()
-    //{
-    //    if(!checkGround) return;
-
-    //    Vector3 pos = this.transform.position + (Vector3)groundBoxPos;
-    //    //Collider2D[] results = new Collider2D[maxColliders];
-
-    //    //int numColliders = LayerMask.NameToLayer("ladder");
-
-    //    //if(numColliders > 0)
-    //    //{
-    //    //   player.onLadder = true;
-    //    //}
-    //    //if(!wasGroundedLastFrame && isGrounded)
-    //    //{
-    //    //    justGotGrounded = true;
-    //    //    player.canDoubleJump = false;
-    //    //}
-    //    //if(wasGroundedLastFrame && !isGrounded)
-    //    //{
-    //    //    justNotGrounded = true;
-    //    //    player.canDoubleJump = true;
-    //    //}
-    //}
-
+    
     public void Flip(bool isFacingRight)
     {
         wallBoxPos.x = -wallBoxPos.x;

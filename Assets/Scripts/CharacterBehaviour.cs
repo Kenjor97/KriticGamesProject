@@ -19,6 +19,8 @@ public class CharacterBehaviour : MonoBehaviour
     //public bool isLookingDown = false;
     public bool canDoubleJump = false;
     public bool onLadder = false;
+    public bool canWallJump = false;
+    public bool isWallJumping = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
@@ -81,6 +83,13 @@ public class CharacterBehaviour : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
+        if (isWallJumping)
+        {
+            isWallJumping = false;
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
         rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
 
         if(onLadder)
@@ -130,9 +139,16 @@ public class CharacterBehaviour : MonoBehaviour
             return;
         }
         //Si toca la pared
-        if(collisions.isWalled)
+        if(collisions.isWalled && collisions.isFalling)
         {
-            if((isFacingRight && axis.x > 0) || (!isFacingRight && axis.x < 0))
+            canWallJump = true;
+            canDoubleJump = false;
+        }
+        else canWallJump = false;
+
+        if (collisions.isWalled)
+        {
+            if ((isFacingRight && axis.x > 0) || (!isFacingRight && axis.x < 0))
             {
                 horizontalSpeed = 0;
                 return;
@@ -167,6 +183,10 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isJumping = true;
         canDoubleJump = false;
+    }
+    void WallJump()
+    {
+        isWallJumping = true;
     }
     void Flip()
     {
@@ -222,6 +242,13 @@ public class CharacterBehaviour : MonoBehaviour
             if(isRunning) jumpForce = jumpRunForce;
             else jumpForce = jumpWalkForce;
             DoubleJump();
+        }
+
+        if(collisions.isFalling && canWallJump)
+        {
+            if (isRunning) jumpForce = jumpRunForce;
+            else jumpForce = jumpWalkForce;
+            WallJump();
         }
     }
     public void Crouch()

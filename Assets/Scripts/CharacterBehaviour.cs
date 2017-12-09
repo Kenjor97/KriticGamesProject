@@ -15,12 +15,14 @@ public class CharacterBehaviour : MonoBehaviour
     public bool isJumping = false;
     public bool isRunning = false;
     public bool crouch = false;
+    public bool canDash = true;
     //public bool isLookingUp = false;
     //public bool isLookingDown = false;
     public bool canDoubleJump = false;
     public bool onLadder = false;
     public bool canWallJump = false;
     public bool isWallJumping = false;
+    public bool isDashing = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
@@ -37,6 +39,7 @@ public class CharacterBehaviour : MonoBehaviour
     public float jumpWalkForce;
     public float jumpRunForce;
     public float jumpForce;
+    public float dashForce;
     [Header("Graphics")]
     public SpriteRenderer rend;
     [Header("Collider Values")]
@@ -44,6 +47,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float crouchYSize;
     public float standYOffset;
     public float crouchYOffset;
+    //[Header("Other")]
+    //public float dashCD = 1f;
     
     void Start ()
     {
@@ -110,6 +115,28 @@ public class CharacterBehaviour : MonoBehaviour
             collider2d.size = new Vector2(collider2d.size.x, standYSize);
             collider2d.offset = new Vector2(collider2d.offset.x, standYOffset);
         }
+
+        if (isDashing)
+        {
+            if (isFacingRight)
+            {
+                rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+                //dashCD -= Time.deltaTime;
+            }
+            else if (!isFacingRight)
+            {
+                rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
+                //dashCD -= Time.deltaTime;
+            }
+            isDashing = false;
+            canDash = true;
+            //if (dashCD >= 0)
+            //{
+            //    dashCD = 1;
+            //    isDashing = false;
+            //    canDash = true;
+            //}
+        }
     }
 
     protected virtual void DefaultUpdate()
@@ -142,7 +169,7 @@ public class CharacterBehaviour : MonoBehaviour
         if(collisions.isWalled && collisions.isFalling)
         {
             canWallJump = true;
-            canDoubleJump = false;
+            //canDoubleJump = false;
         }
         else canWallJump = false;
 
@@ -187,6 +214,12 @@ public class CharacterBehaviour : MonoBehaviour
     void WallJump()
     {
         isWallJumping = true;
+    }
+    void Dashing()
+    {
+        isDashing = true;
+        canDash = false;
+
     }
     void Flip()
     {
@@ -256,6 +289,13 @@ public class CharacterBehaviour : MonoBehaviour
         if (collisions.isGrounded)
         {
             Crouching();
+        }
+    }
+    public void Dash()
+    {
+        if(canDash)
+        {
+            Dashing();
         }
     }
     #endregion

@@ -115,8 +115,16 @@ public class Collisions : MonoBehaviour
         {
             isWalled = true;
         }
-        if (!wasWalledLastFrame && isWalled) justGotWalled = true;
-        if (wasWalledLastFrame && !isWalled) justNotWalled = true;
+        if (!wasWalledLastFrame && isWalled)
+        {
+            justGotWalled = true;
+            player.canDoubleJump = false;
+        }
+        if (wasWalledLastFrame && !isWalled)
+        {
+            justNotWalled = true;
+            player.canDoubleJump = true;
+        }
 
         if (justNotWalled) Debug.Log("JUST NOT WALLED");
         if (justGotWalled) Debug.Log("just got walled");

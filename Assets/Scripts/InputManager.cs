@@ -25,6 +25,8 @@ public class InputManager : MonoBehaviour
         InputRun();
         // alternar entre agachado y no agachado
         InputCrouch();
+        // dash
+        InputDash();
 	}
 
     void InputPause()
@@ -65,6 +67,14 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Crouch");
             player.Crouch();
+        }
+    }
+    void InputDash()
+    {
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("Dash");
+            player.Dash();
         }
     }
     void InputGodMode()

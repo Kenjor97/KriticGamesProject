@@ -432,7 +432,7 @@ Transform:
   m_PrefabInternal: {fileID: 918320317}
   m_GameObject: {fileID: 1250536438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96, y: 4.95, z: 0}
+  m_LocalPosition: {x: -0.31, y: 9.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401337726}
@@ -648,11 +648,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4916168733860590, guid: 06d867f55dfcbe848a1a9faa7baceb41, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.96
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4916168733860590, guid: 06d867f55dfcbe848a1a9faa7baceb41, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.95
+      value: 9.01
       objectReference: {fileID: 0}
     - target: {fileID: 4916168733860590, guid: 06d867f55dfcbe848a1a9faa7baceb41, type: 2}
       propertyPath: m_LocalPosition.z
@@ -696,6 +696,11 @@ Prefab:
     - target: {fileID: 114688149290645216, guid: 06d867f55dfcbe848a1a9faa7baceb41,
         type: 2}
       propertyPath: dashCD
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114287782793638698, guid: 06d867f55dfcbe848a1a9faa7baceb41,
+        type: 2}
+      propertyPath: wallBoxSize.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1213,7 +1218,7 @@ MonoBehaviour:
   groundBoxPos: {x: 0, y: 0}
   groundBoxSize: {x: 0.7, y: 0.1}
   wallBoxPos: {x: 0.6, y: 0.85}
-  wallBoxSize: {x: 0.15, y: 1.5}
+  wallBoxSize: {x: 0.15, y: 1}
   ceilingBoxPos: {x: 0, y: 1.7}
   ceilingBoxSize: {x: 0.7, y: 0.1}
 --- !u!61 &1250536441

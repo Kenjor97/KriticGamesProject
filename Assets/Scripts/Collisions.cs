@@ -114,11 +114,12 @@ public class Collisions : MonoBehaviour
         if (numColliders > 0)
         {
             isWalled = true;
+            player.canDoubleJump = false;
         }
         if (!wasWalledLastFrame && isWalled)
         {
             justGotWalled = true;
-            player.canDoubleJump = false;
+            //player.canDoubleJump = false;
         }
         if (wasWalledLastFrame && !isWalled)
         {

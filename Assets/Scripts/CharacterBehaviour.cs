@@ -8,6 +8,7 @@ public class CharacterBehaviour : MonoBehaviour
     public enum State { Default, Dead, GodMode }
     public State state;
     public CameraBehaviour cameraBehaviour;
+    public int life;
     [Header("State")]
     public bool canMove = true;
     public bool canJump = true;
@@ -55,6 +56,7 @@ public class CharacterBehaviour : MonoBehaviour
         collisions = GetComponent<Collisions>();
         rb = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<BoxCollider2D>();
+        life = 10;
         standYSize = collider2d.size.y;
         crouchYSize = collider2d.size.y / 2;
         standYOffset = collider2d.offset.y;
@@ -297,6 +299,11 @@ public class CharacterBehaviour : MonoBehaviour
         {
             Dashing();
         }
+    }
+    public void LifeUpdate()
+    {
+        life--;
+        if (life <= 0) state = State.Dead;
     }
     #endregion
 }

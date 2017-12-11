@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: df23e019e2d825f4f8a5bf4e9c849fa9
+timeCreated: 1513006253
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: chain_01_chain_01
+    100002: chain_01_chain_02
+    100004: chain_01_chain_03
+    100006: chain_01_chain_04
+    100008: chain_01_chain_05
+    100010: chain_01_chain_06
+    100012: chain_01_chain_07
+    100014: chain_01_chain_08
+    100016: chain_01_chain_09
+    100018: //RootNode
+    400000: chain_01_chain_01
+    400002: chain_01_chain_02
+    400004: chain_01_chain_03
+    400006: chain_01_chain_04
+    400008: chain_01_chain_05
+    400010: chain_01_chain_06
+    400012: chain_01_chain_07
+    400014: chain_01_chain_08
+    400016: chain_01_chain_09
+    400018: //RootNode
+    2300000: chain_01_chain_01
+    2300002: chain_01_chain_02
+    2300004: chain_01_chain_03
+    2300006: chain_01_chain_04
+    2300008: chain_01_chain_05
+    2300010: chain_01_chain_06
+    2300012: chain_01_chain_07
+    2300014: chain_01_chain_08
+    2300016: chain_01_chain_09
+    3300000: chain_01_chain_01
+    3300002: chain_01_chain_02
+    3300004: chain_01_chain_03
+    3300006: chain_01_chain_04
+    3300008: chain_01_chain_05
+    3300010: chain_01_chain_06
+    3300012: chain_01_chain_07
+    3300014: chain_01_chain_08
+    3300016: chain_01_chain_09
+    4300000: chain_01_chain_01
+    4300002: chain_01_chain_02
+    4300004: chain_01_chain_03
+    4300006: chain_01_chain_04
+    4300008: chain_01_chain_05
+    4300010: chain_01_chain_06
+    4300012: chain_01_chain_07
+    4300014: chain_01_chain_08
+    4300016: chain_01_chain_09
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_01Mat
+    second: {fileID: 2100000, guid: 699497c7eea3ce740986212a4a3c47b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_02Mat
+    second: {fileID: 2100000, guid: 5831b3b77bab6e44c8e9c814c3aa70d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_03Mat
+    second: {fileID: 2100000, guid: 1acfb71247dd8914a9d9263f46ed41fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_04Mat
+    second: {fileID: 2100000, guid: 13a46cb278de34e4e8e1d8fa55c6906c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_05Mat
+    second: {fileID: 2100000, guid: e180863064078e14aa1299a02a877bbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_06Mat
+    second: {fileID: 2100000, guid: 7eceaa729a3f05249b31a87aa08546a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_07Mat
+    second: {fileID: 2100000, guid: 205c6c0577cfff24ebe4fd2206a98e4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_08Mat
+    second: {fileID: 2100000, guid: 2d338644c02eefa45a621fdcb3d65c0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_01_chain_09Mat
+    second: {fileID: 2100000, guid: 9a93bb68dc9b53842ba2dbc534e8f85d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

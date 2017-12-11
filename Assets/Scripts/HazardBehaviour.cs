@@ -15,7 +15,7 @@ public class HazardBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("player"))
         {
-            player.RecieveDamage();
+            player.RecieveLethalDamage();
         }
     }
 }

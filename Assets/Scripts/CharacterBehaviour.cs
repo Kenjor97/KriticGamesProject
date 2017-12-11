@@ -40,6 +40,7 @@ public class CharacterBehaviour : MonoBehaviour
     public float jumpWalkForce;
     public float jumpRunForce;
     public float jumpForce;
+    public float wallJumpForce;
     public float dashForce;
     [Header("Graphics")]
     public SpriteRenderer rend;
@@ -74,6 +75,7 @@ public class CharacterBehaviour : MonoBehaviour
                 DefaultUpdate();
                 break;
             case State.Dead:
+                Dead();
                 break;
             case State.GodMode:
                 break;
@@ -98,6 +100,14 @@ public class CharacterBehaviour : MonoBehaviour
             isWallJumping = false;
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if(isFacingRight)
+            {
+                rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
+            }
+            else if(!isFacingRight)
+            {
+                rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
+            }
         }
 
         rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
@@ -147,9 +157,14 @@ public class CharacterBehaviour : MonoBehaviour
     protected virtual void DefaultUpdate()
     {
         // Calcular el movimiento horizontal
-        HorizontalMovement();
-        // Calcular el movimiento vertical
-        VerticalMovement();
+            HorizontalMovement();
+            // Calcular el movimiento vertical
+            VerticalMovement();
+    }
+
+    void Dead()
+    {
+        canMove = false;
     }
 
     void HorizontalMovement()
@@ -206,6 +221,7 @@ public class CharacterBehaviour : MonoBehaviour
             canDoubleJump = false;
             verticalSpeed = axis.y * onLadderSpeed;
         }
+        
     }
     void Jump()
     {
@@ -290,8 +306,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(collisions.isFalling && canWallJump)
         {
-            if (isRunning) jumpForce = jumpRunForce;
-            else jumpForce = jumpWalkForce;
+            //if (isRunning) jumpForce = jumpRunForce;
+            //else jumpForce = jumpWalkForce;
             WallJump();
         }
     }
@@ -321,9 +337,9 @@ public class CharacterBehaviour : MonoBehaviour
             
         }
     }
-    public void RecieveDamage()
+    public void RecieveLethalDamage()
     {
-        life--;
+        life = 0;
         if (life <= 0) state = State.Dead;
     }
     #endregion

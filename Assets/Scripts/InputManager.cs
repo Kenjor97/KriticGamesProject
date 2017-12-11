@@ -77,6 +77,14 @@ public class InputManager : MonoBehaviour
             player.Dash();
         }
     }
+    void InputAttack()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Melee Attack");
+            //player.Attack();
+        }
+    }
     void InputGodMode()
     {
 

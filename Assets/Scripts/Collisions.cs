@@ -87,8 +87,9 @@ public class Collisions : MonoBehaviour
         if(numColliders > 0)
         {
             isGrounded = true;
+            //player.canDoubleJump = false;
         }
-        if(!wasGroundedLastFrame && isGrounded)
+        if (!wasGroundedLastFrame && isGrounded)
         {
             justGotGrounded = true;
             player.canDoubleJump = false;
@@ -126,6 +127,7 @@ public class Collisions : MonoBehaviour
             justNotWalled = true;
             player.canDoubleJump = true;
         }
+        if (justNotWalled && isGrounded) player.canDoubleJump = false;
 
         if (justNotWalled) Debug.Log("JUST NOT WALLED");
         if (justGotWalled) Debug.Log("just got walled");

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641383, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641347, b: 0.57481503, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1168,15 +1168,16 @@ MonoBehaviour:
   verticalSpeed: 0
   axis: {x: 0, y: 0}
   jumpWalkForce: 5
-  jumpRunForce: 5
+  jumpRunForce: 50
   jumpForce: 5
   wallJumpForce: 50
-  dashForce: 50
+  dashForce: 10
   rend: {fileID: 401337725}
   standYSize: 0
   crouchYSize: 0
   standYOffset: 0
   crouchYOffset: 0
+  dashCD: 0
   attackBoxPos: {x: 1, y: 0.8}
   attackBoxSize: {x: 1, y: 1.5}
   filter:

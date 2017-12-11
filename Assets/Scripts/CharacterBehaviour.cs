@@ -50,7 +50,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float standYOffset;
     public float crouchYOffset;
     [Header("Other")]
-    //public float dashCD = 1f;
+    [SerializeField]
+    float dashCD;
     public Vector2 attackBoxPos;
     public Vector2 attackBoxSize;
     public ContactFilter2D filter;
@@ -61,6 +62,7 @@ public class CharacterBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<BoxCollider2D>();
         life = 10;
+        dashCD = 0.2f;
         standYSize = collider2d.size.y;
         crouchYSize = collider2d.size.y / 2;
         standYOffset = collider2d.offset.y;
@@ -109,7 +111,7 @@ public class CharacterBehaviour : MonoBehaviour
                 rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
             }
         }
-
+        
         rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
 
         if(onLadder)
@@ -133,24 +135,25 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (isDashing)
         {
+            dashCD -= Time.deltaTime;
             if (isFacingRight)
             {
+                rb.velocity = new Vector2(0, 0);
+
                 rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
-                //dashCD -= Time.deltaTime;
             }
             else if (!isFacingRight)
             {
+                rb.velocity = new Vector2(0, 0);
+
                 rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
-                //dashCD -= Time.deltaTime;
             }
-            isDashing = false;
-            canDash = true;
-            //if (dashCD >= 0)
-            //{
-            //    dashCD = 1;
-            //    isDashing = false;
-            //    canDash = true;
-            //}
+            if (dashCD <= 0)
+            {
+                dashCD = 0.2f;
+                isDashing = false;
+                canDash = true;
+            }
         }
     }
 

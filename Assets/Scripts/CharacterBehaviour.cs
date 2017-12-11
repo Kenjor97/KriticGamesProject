@@ -48,9 +48,12 @@ public class CharacterBehaviour : MonoBehaviour
     public float crouchYSize;
     public float standYOffset;
     public float crouchYOffset;
-    //[Header("Other")]
+    [Header("Other")]
     //public float dashCD = 1f;
-    
+    public Vector2 attackBoxPos;
+    public Vector2 attackBoxSize;
+    public ContactFilter2D filter;
+
     void Start ()
     {
         collisions = GetComponent<Collisions>();
@@ -235,6 +238,12 @@ public class CharacterBehaviour : MonoBehaviour
     {
         crouch = true;
     }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Vector3 pos = this.transform.position + (Vector3)attackBoxPos;
+        Gizmos.DrawWireCube(pos, attackBoxSize);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("ladder"))
@@ -300,7 +309,19 @@ public class CharacterBehaviour : MonoBehaviour
             Dashing();
         }
     }
-    public void LifeUpdate()
+    public void Attack()
+    {
+        Vector3 pos = this.transform.position + (Vector3)attackBoxPos;
+        Collider2D[] results = new Collider2D[1];
+
+        int numColliders = Physics2D.OverlapBox(pos, attackBoxSize, 0, filter, results);
+
+        if (numColliders > 0)
+        {
+            
+        }
+    }
+    public void RecieveDamage()
     {
         life--;
         if (life <= 0) state = State.Dead;

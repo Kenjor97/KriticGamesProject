@@ -27,7 +27,12 @@ public class InputManager : MonoBehaviour
         InputCrouch();
         // dash
         InputDash();
-	}
+        // ataques
+        InputAttack();
+        InputAttack2();
+        // god mode
+        InputGodMode();
+    }
 
     void InputPause()
     {
@@ -83,6 +88,14 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Melee Attack");
             //player.Attack();
+        }
+    }
+    void InputAttack2()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Ranged Attack");
+            //player.Attack2();
         }
     }
     void InputGodMode()

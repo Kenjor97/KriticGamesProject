@@ -50,6 +50,8 @@ public class Collisions : MonoBehaviour
         GroundDetection();
         WallDetection();
         CeilingDetection();
+        if (justNotWalled && isGrounded) player.canDoubleJump = false;
+        if (!isGrounded && isWalled && !player.isWallJumping) player.canWallJump = true;
     }
 
     void ResetState()
@@ -127,7 +129,6 @@ public class Collisions : MonoBehaviour
             justNotWalled = true;
             player.canDoubleJump = true;
         }
-        if (justNotWalled && isGrounded) player.canDoubleJump = false;
 
         if (justNotWalled) Debug.Log("JUST NOT WALLED");
         if (justGotWalled) Debug.Log("just got walled");

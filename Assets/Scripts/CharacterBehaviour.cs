@@ -50,8 +50,8 @@ public class CharacterBehaviour : MonoBehaviour
     public float standYOffset;
     public float crouchYOffset;
     [Header("Other")]
-    [SerializeField]
-    float dashCD;
+    [SerializeField] float dashCD;
+    [SerializeField] float wallJumpCD;
     public Vector2 attackBoxPos;
     public Vector2 attackBoxSize;
     public ContactFilter2D filter;
@@ -63,6 +63,7 @@ public class CharacterBehaviour : MonoBehaviour
         collider2d = GetComponent<BoxCollider2D>();
         life = 10;
         dashCD = 0.2f;
+        wallJumpCD = 0.2f;
         standYSize = collider2d.size.y;
         crouchYSize = collider2d.size.y / 2;
         standYOffset = collider2d.offset.y;
@@ -93,22 +94,29 @@ public class CharacterBehaviour : MonoBehaviour
         if(isJumping)
         {
             isJumping = false;
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.velocity = new Vector2(0, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         if (isWallJumping)
         {
-            isWallJumping = false;
+            wallJumpCD -= Time.deltaTime;
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            if(isFacingRight)
+            rb.AddForce(Vector2.one * wallJumpForce, ForceMode2D.Impulse);
+            //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            //if(isFacingRight)
+            //{
+            //    rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
+            //}
+            //else if(!isFacingRight)
+            //{
+            //    rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
+            //}
+            if(wallJumpCD <=0)
             {
-                rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
-            }
-            else if(!isFacingRight)
-            {
-                rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
+                wallJumpCD = 0.2f;
+                isWallJumping = false;
+                canWallJump = true;
             }
         }
         
@@ -238,12 +246,12 @@ public class CharacterBehaviour : MonoBehaviour
     void WallJump()
     {
         isWallJumping = true;
+        canWallJump = false;
     }
     void Dashing()
     {
         isDashing = true;
         canDash = false;
-
     }
     void Flip()
     {
@@ -344,6 +352,11 @@ public class CharacterBehaviour : MonoBehaviour
     {
         life = 0;
         if (life <= 0) state = State.Dead;
+    }
+    public void GodMode()
+    {
+        if (state == State.Default) state = State.GodMode;
+        else if (state == State.GodMode) state = State.Default;
     }
     #endregion
 }

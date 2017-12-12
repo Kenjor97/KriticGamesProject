@@ -505,7 +505,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250536438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.08, y: 0.16, z: 0}
+  m_LocalPosition: {x: -1.49, y: 4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401337726}
@@ -1168,9 +1168,9 @@ MonoBehaviour:
   verticalSpeed: 0
   axis: {x: 0, y: 0}
   jumpWalkForce: 5
-  jumpRunForce: 50
+  jumpRunForce: 5
   jumpForce: 5
-  wallJumpForce: 50
+  wallJumpForce: 5
   dashForce: 10
   rend: {fileID: 401337725}
   standYSize: 0
@@ -1178,6 +1178,7 @@ MonoBehaviour:
   standYOffset: 0
   crouchYOffset: 0
   dashCD: 0
+  wallJumpCD: 0
   attackBoxPos: {x: 1, y: 0.8}
   attackBoxSize: {x: 1, y: 1.5}
   filter:

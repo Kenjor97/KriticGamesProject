@@ -100,7 +100,12 @@ public class InputManager : MonoBehaviour
     }
     void InputGodMode()
     {
-
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            player.GodMode();
+            if (player.state == CharacterBehaviour.State.GodMode) Debug.Log("God Mode On");
+            else if (player.state == CharacterBehaviour.State.Default) Debug.Log("God Mode Off");
+        }
     }
     void InputDirectAccess()
     {

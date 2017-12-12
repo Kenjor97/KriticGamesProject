@@ -6,13 +6,11 @@ public class InputManager : MonoBehaviour
 {
     public CharacterBehaviour player;
 
-
 	void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehaviour>();
 	}
 	
-
 	void Update ()
     {
         // Leer para pausar el juego
@@ -36,7 +34,7 @@ public class InputManager : MonoBehaviour
 
     void InputPause()
     {
-        if(Input.GetButtonDown("Pause")) { Debug.Log("Pause"); }
+        if(Input.GetButtonDown("Pause")) Debug.Log("Pause");
     }
     void InputAxis()
     {
@@ -87,7 +85,7 @@ public class InputManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Debug.Log("Melee Attack");
-            //player.Attack();
+            player.Attack();
         }
     }
     void InputAttack2()

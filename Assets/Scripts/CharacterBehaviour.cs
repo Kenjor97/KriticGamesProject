@@ -27,7 +27,7 @@ public class CharacterBehaviour : MonoBehaviour
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
-    public BoxCollider2D collider2d;
+    public BoxCollider2D boxCollider2D;
     [Header("Speed")]
     public float walkSpeed;
     public float runSpeed;
@@ -60,14 +60,14 @@ public class CharacterBehaviour : MonoBehaviour
     {
         collisions = GetComponent<Collisions>();
         rb = GetComponent<Rigidbody2D>();
-        collider2d = GetComponent<BoxCollider2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         life = 10;
         dashCD = 0.2f;
         wallJumpCD = 0.2f;
-        standYSize = collider2d.size.y;
-        crouchYSize = collider2d.size.y / 2;
-        standYOffset = collider2d.offset.y;
-        crouchYOffset = collider2d.offset.y / 2 + 0.065f;
+        standYSize = boxCollider2D.size.y;
+        crouchYSize = boxCollider2D.size.y / 2;
+        standYOffset = boxCollider2D.offset.y;
+        crouchYOffset = boxCollider2D.offset.y / 2 + 0.065f;
 	}
 	
 	void Update ()
@@ -130,15 +130,15 @@ public class CharacterBehaviour : MonoBehaviour
         if (crouch)
         {
             canMove = false;
-            collider2d.size = new Vector2(collider2d.size.x, crouchYSize);
-            collider2d.offset = new Vector2(collider2d.offset.x, crouchYOffset);
+            boxCollider2D.size = new Vector2(boxCollider2D.size.x, crouchYSize);
+            boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, crouchYOffset);
         }
         else
         {
             canMove = true;
             crouch = false;
-            collider2d.size = new Vector2(collider2d.size.x, standYSize);
-            collider2d.offset = new Vector2(collider2d.offset.x, standYOffset);
+            boxCollider2D.size = new Vector2(boxCollider2D.size.x, standYSize);
+            boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, standYOffset);
         }
 
         if (isDashing)
@@ -257,7 +257,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
         rend.flipX = !rend.flipX;
-        collider2d.offset = new Vector2(collider2d.offset.x * -1, collider2d.offset.y);
+        boxCollider2D.offset = new Vector2(boxCollider2D.offset.x * -1, boxCollider2D.offset.y);
         collisions.Flip(isFacingRight);
         cameraBehaviour.offSet.x *= -1;
     }
@@ -345,6 +345,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (numColliders > 0)
         {
+            Debug.Log("aaaa");
             
         }
     }

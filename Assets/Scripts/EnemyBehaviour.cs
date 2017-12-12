@@ -34,9 +34,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
 
     }
-    public void RecieveDamage()
+    public void RecieveDamage(int damage)
     {
-        life--;
+        life -= damage;
         if (life <= 0) state = State.Dead;
     }
 }

@@ -9,6 +9,7 @@ public class CharacterBehaviour : MonoBehaviour
     public State state;
     public CameraBehaviour cameraBehaviour;
     public int life;
+    public int damage;
     [Header("State")]
     public bool canMove = true;
     public bool canJump = true;
@@ -62,6 +63,7 @@ public class CharacterBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         life = 10;
+        damage = 5;
         dashCD = 0.2f;
         wallJumpCD = 0.2f;
         standYSize = boxCollider2D.size.y;
@@ -79,6 +81,7 @@ public class CharacterBehaviour : MonoBehaviour
                 break;
             case State.Dead:
                 Dead();
+                HorizontalMovement();
                 break;
             case State.GodMode:
                 break;
@@ -102,16 +105,17 @@ public class CharacterBehaviour : MonoBehaviour
         {
             wallJumpCD -= Time.deltaTime;
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(Vector2.one * wallJumpForce, ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(-wallJumpForce, jumpForce), ForceMode2D.Impulse);
             //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            //if(isFacingRight)
-            //{
-            //    rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
-            //}
-            //else if(!isFacingRight)
-            //{
-            //    rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
-            //}
+            if(isFacingRight)
+            {
+                //rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(-1 * wallJumpForce, 1 * jumpForce));
+            }
+            else if(!isFacingRight)
+            {
+                rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
+            }
             if(wallJumpCD <=0)
             {
                 wallJumpCD = 0.2f;
@@ -168,9 +172,9 @@ public class CharacterBehaviour : MonoBehaviour
     protected virtual void DefaultUpdate()
     {
         // Calcular el movimiento horizontal
-            HorizontalMovement();
-            // Calcular el movimiento vertical
-            VerticalMovement();
+        HorizontalMovement();
+        // Calcular el movimiento vertical
+        VerticalMovement();
     }
 
     void Dead()
@@ -260,6 +264,7 @@ public class CharacterBehaviour : MonoBehaviour
         boxCollider2D.offset = new Vector2(boxCollider2D.offset.x * -1, boxCollider2D.offset.y);
         collisions.Flip(isFacingRight);
         cameraBehaviour.offSet.x *= -1;
+        attackBoxPos.x *= -1;
     }
     void Crouching()
     {
@@ -345,8 +350,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (numColliders > 0)
         {
-            Debug.Log("aaaa");
-            
+            Debug.Log("Attacking Enemy");
+            results[0].GetComponent<EnemyBehaviour>().RecieveDamage(damage);
         }
     }
     public void RecieveLethalDamage()

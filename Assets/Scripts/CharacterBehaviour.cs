@@ -97,7 +97,11 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        collisions.MyFixedUpdate();
+        if(state == State.Default)
+        {
+            collisions.MyFixedUpdate();
+            Physics2D.IgnoreLayerCollision(8, 9, false);
+        }
 
         if(isJumping)
         {
@@ -284,7 +288,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
     void Ghost()
     {
-        Physics2D.IgnoreLayerCollision(8, 9);
+        Physics2D.IgnoreLayerCollision(8, 9, true);
     }
     void OnDrawGizmosSelected()
     {
@@ -389,7 +393,11 @@ public class CharacterBehaviour : MonoBehaviour
     public void GodMode()
     {
         if (state == State.Default) state = State.GodMode;
-        else if (state == State.GodMode) state = State.Default;
+        else if (state == State.GodMode)
+        {
+            rb.gravityScale = 1;
+            state = State.Default;
+        }
     }
     #endregion
 }

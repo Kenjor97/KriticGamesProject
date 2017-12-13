@@ -74,7 +74,7 @@ public class InputManager : MonoBehaviour
     }
     void InputDash()
     {
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.V))
         {
             Debug.Log("Dash");
             player.Dash();
@@ -93,7 +93,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Ranged Attack");
-            //player.Attack2();
+            player.Attack2();
         }
     }
     void InputGodMode()

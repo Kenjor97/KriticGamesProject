@@ -374,6 +374,10 @@ public class CharacterBehaviour : MonoBehaviour
             results[0].GetComponent<EnemyBehaviour>().RecieveDamage(damage);
         }
     }
+    public void Attack2()
+    {
+
+    }
     public void RecieveEnemyDamage(int damage)
     {
         if (canRecieveDamage)

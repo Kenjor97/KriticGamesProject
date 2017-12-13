@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public enum State { Patrol, Attack, Dead }
+    public enum State { Patrol, Chase, Attack, Dead }
     public State state;
 
     public int life;
@@ -22,6 +22,8 @@ public class EnemyBehaviour : MonoBehaviour
             case State.Patrol:
                 Patrol();
                 break;
+            case State.Chase:
+                break;
             case State.Attack:
                 break;
             case State.Dead:
@@ -31,6 +33,18 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
     void Patrol()
+    {
+
+    }
+    void Chase()
+    {
+
+    }
+    void Attack()
+    {
+
+    }
+    void Dead()
     {
 
     }

@@ -46,12 +46,16 @@ public class Collisions : MonoBehaviour
 
     public void MyFixedUpdate()
     {
-        ResetState();
-        GroundDetection();
-        WallDetection();
-        CeilingDetection();
-        if (justNotWalled && isGrounded) player.canDoubleJump = false;
-        if (!isGrounded && isWalled && !player.isWallJumping) player.canWallJump = true;
+        if (player.state == CharacterBehaviour.State.Default)
+        {
+            ResetState();
+            GroundDetection();
+            WallDetection();
+            CeilingDetection();
+            if (justNotWalled && isGrounded) player.canDoubleJump = false;
+            if (!isGrounded && isWalled && !player.isWallJumping) player.canWallJump = true;
+            else player.canWallJump = false;
+        }
     }
 
     void ResetState()

@@ -18,6 +18,7 @@ public class CharacterBehaviour : MonoBehaviour
     public bool isRunning = false;
     public bool crouch = false;
     public bool canDash = true;
+    public bool canRecieveDamage = true;
     //public bool isLookingUp = false;
     //public bool isLookingDown = false;
     public bool canDoubleJump = false;
@@ -52,7 +53,7 @@ public class CharacterBehaviour : MonoBehaviour
     public float crouchYOffset;
     [Header("Other")]
     [SerializeField] float dashCD;
-    [SerializeField] float wallJumpCD;
+    //[SerializeField] float wallJumpCD;
     public Vector2 attackBoxPos;
     public Vector2 attackBoxSize;
     public ContactFilter2D filter;
@@ -65,7 +66,7 @@ public class CharacterBehaviour : MonoBehaviour
         life = 10;
         damage = 5;
         dashCD = 0.2f;
-        wallJumpCD = 0.2f;
+        //wallJumpCD = 0.2f;
         standYSize = boxCollider2D.size.y;
         crouchYSize = boxCollider2D.size.y / 2;
         standYOffset = boxCollider2D.offset.y;
@@ -84,6 +85,10 @@ public class CharacterBehaviour : MonoBehaviour
                 HorizontalMovement();
                 break;
             case State.GodMode:
+                DefaultUpdate();
+                Invulnerable();
+                Fly();
+                Ghost();
                 break;
             default:
                 break;
@@ -103,31 +108,35 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (isWallJumping)
         {
-            wallJumpCD -= Time.deltaTime;
+            //wallJumpCD -= Time.deltaTime;
             rb.velocity = new Vector2(rb.velocity.x, 0);
             //rb.AddForce(new Vector2(-wallJumpForce, jumpForce), ForceMode2D.Impulse);
-            //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             if(isFacingRight)
             {
-                //rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
-                rb.AddForce(new Vector2(-1 * wallJumpForce, 1 * jumpForce));
+                rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
+                //rb.AddForce(new Vector2(-1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
             }
             else if(!isFacingRight)
             {
                 rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
+                //rb.AddForce(new Vector2(1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
             }
-            if(wallJumpCD <=0)
-            {
-                wallJumpCD = 0.2f;
-                isWallJumping = false;
-                canWallJump = true;
-            }
+            //if(wallJumpCD <=0)
+            //{
+            //    wallJumpCD = 0.2f;
+            //    isWallJumping = false;
+            //    canWallJump = true;
+            //}
+            isWallJumping = false;
+            canWallJump = true;
         }
         
         rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
 
         if(onLadder)
         {
+            canDoubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, verticalSpeed);
         }
 
@@ -230,13 +239,7 @@ public class CharacterBehaviour : MonoBehaviour
         crouch = false;
         //isLookingDown = false;
         //isLookingUp = false;
-
-        if(onLadder)
-        {
-            canDoubleJump = false;
-            verticalSpeed = axis.y * onLadderSpeed;
-        }
-        
+        verticalSpeed = axis.y * onLadderSpeed;        
     }
     void Jump()
     {
@@ -269,6 +272,19 @@ public class CharacterBehaviour : MonoBehaviour
     void Crouching()
     {
         crouch = true;
+    }
+    void Invulnerable()
+    {
+        canRecieveDamage = false;
+    }
+    void Fly()
+    {
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(rb.velocity.x, verticalSpeed);
+    }
+    void Ghost()
+    {
+        Physics2D.IgnoreLayerCollision(8, 9);
     }
     void OnDrawGizmosSelected()
     {
@@ -354,10 +370,21 @@ public class CharacterBehaviour : MonoBehaviour
             results[0].GetComponent<EnemyBehaviour>().RecieveDamage(damage);
         }
     }
-    public void RecieveLethalDamage()
+    public void RecieveEnemyDamage(int damage)
     {
-        life = 0;
-        if (life <= 0) state = State.Dead;
+        if (canRecieveDamage)
+        {
+            life -= damage;
+            if (life <= 0) state = State.Dead;
+        }
+    }
+    public void RecieveHazardDamage()
+    {
+        if (canRecieveDamage)
+        {
+            life = 0;
+            if (life <= 0) state = State.Dead;
+        }
     }
     public void GodMode()
     {

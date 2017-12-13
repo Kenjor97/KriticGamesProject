@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 786f932cfe75c704e84e9a056446fadf
-timeCreated: 1513100722
+guid: b0ade7680698c9b4e945da16cbf76ab7
+timeCreated: 1513184782
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,14 +9,15 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder001
+    4300000: coin2:Cylinder002
+    7400000: Take 001
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 5fd23427e82653d45a44fff3a3c2f0d0, type: 2}
+      name: blinn1
+    second: {fileID: 2100000, guid: 0c64c082780a0ff45953ab12bf136676, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -42,7 +43,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 360
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

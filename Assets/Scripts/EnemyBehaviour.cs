@@ -8,12 +8,16 @@ public class EnemyBehaviour : MonoBehaviour
     public State state;
 
     public int life;
+    public float attackCD;
+    public bool canAttack;
 
     public SpriteRenderer rend;
 
     void Start ()
     {
         life = 10;
+        attackCD = 0.5f;
+        canAttack = false;
 	}
 	void Update ()
     {
@@ -23,8 +27,10 @@ public class EnemyBehaviour : MonoBehaviour
                 Patrol();
                 break;
             case State.Chase:
+                Chase();
                 break;
             case State.Attack:
+                Attack();
                 break;
             case State.Dead:
                 Dead();

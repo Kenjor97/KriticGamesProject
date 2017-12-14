@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   cameraBehaviour: {fileID: 1798539989}
-  projectile: {fileID: 0}
+  projectile: {fileID: 1956570658363080, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
   life: 0
   meleeDamage: 0
   rangedDamage: 0
@@ -1296,49 +1296,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!1001 &1323811959
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -14.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-  m_IsPrefabParent: 0
+  m_Constraints: 4
 --- !u!1 &1374597231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,7 +1615,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1558945259
 Transform:
   m_ObjectHideFlags: 0

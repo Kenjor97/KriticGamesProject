@@ -28,12 +28,12 @@ public class ProjectileBehaviour : MonoBehaviour
         if (facingRight)
         {
             projectile.localPosition = new Vector3(projectile.localPosition.x + Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
-            projectile.Rotate(Vector3.forward * Time.deltaTime * -rotateSpeed);
+            projectile.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
         }
         else
         {
             projectile.localPosition = new Vector3(projectile.localPosition.x - Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
-            projectile.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
+            projectile.Rotate(Vector3.forward * Time.deltaTime * -rotateSpeed);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -16,6 +16,8 @@ public class ProjectileBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehaviour>();
         if (player.isFacingRight) facingRight = true;
         else facingRight = false;
+
+        Destroy(this.gameObject, 2.5f);
     }
 	
 	void Update ()
@@ -38,13 +40,14 @@ public class ProjectileBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("OnTriggerEnter2D Event " + collision.gameObject.name);
         if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
         {
             Debug.Log("Enemy: " + collision);
             collision.GetComponent<EnemyBehaviour>().RecieveDamage(player.rangedDamage);
             Destroy(this.gameObject);
         }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             Debug.Log("Destroyed by ground");
             Destroy(this.gameObject);

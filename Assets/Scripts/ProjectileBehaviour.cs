@@ -6,6 +6,8 @@ public class ProjectileBehaviour : MonoBehaviour
 {
     public Transform projectile;
     public CharacterBehaviour player;
+    public float speed = 7.5f;
+    public float rotateSpeed = -500;
 
     void Start ()
     {
@@ -20,13 +22,21 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        projectile.localPosition = new Vector3(projectile.localPosition.x + 0.1f, projectile.localPosition.y, projectile.localPosition.z);
+        projectile.localPosition = new Vector3(projectile.localPosition.x + Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
+        projectile.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
         {
-            
+            Debug.Log("Enemy: " + collision);
+            collision.GetComponent<EnemyBehaviour>().RecieveDamage(player.rangedDamage);
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            Debug.Log("Destroyed by ground");
+            Destroy(this.gameObject);
         }
     }
 }

@@ -27,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
             case State.Attack:
                 break;
             case State.Dead:
+                Dead();
                 break;
             default:
                 break;
@@ -46,7 +47,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Dead()
     {
-
+        Destroy(this.gameObject);
     }
     public void RecieveDamage(int damage)
     {

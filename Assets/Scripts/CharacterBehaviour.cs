@@ -8,8 +8,10 @@ public class CharacterBehaviour : MonoBehaviour
     public enum State { Default, Dead, GodMode }
     public State state;
     public CameraBehaviour cameraBehaviour;
+    public GameObject projectile;
     public int life;
-    public int damage;
+    public int meleeDamage;
+    public int rangedDamage;
     [Header("State")]
     public bool canMove = true;
     public bool canJump = true;
@@ -64,7 +66,8 @@ public class CharacterBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         life = 10;
-        damage = 5;
+        meleeDamage = 5;
+        rangedDamage = 2;
         dashCD = 0.2f;
         //wallJumpCD = 0.2f;
         standYSize = boxCollider2D.size.y;
@@ -371,12 +374,12 @@ public class CharacterBehaviour : MonoBehaviour
         if (numColliders > 0)
         {
             Debug.Log("Attacking Enemy");
-            results[0].GetComponent<EnemyBehaviour>().RecieveDamage(damage);
+            results[0].GetComponent<EnemyBehaviour>().RecieveDamage(meleeDamage);
         }
     }
     public void Attack2()
     {
-
+        //Instantiate(projectile, this.transform.position);
     }
     public void RecieveEnemyDamage(int damage)
     {

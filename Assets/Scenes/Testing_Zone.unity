@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641383, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641347, b: 0.57481503, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1144,8 +1144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   cameraBehaviour: {fileID: 1798539989}
+  projectile: {fileID: 0}
   life: 0
-  damage: 0
+  meleeDamage: 0
+  rangedDamage: 0
   canMove: 1
   canJump: 1
   isFacingRight: 1
@@ -1304,11 +1306,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.52
+      value: -14.45
       objectReference: {fileID: 0}
     - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.94
+      value: -0.54
       objectReference: {fileID: 0}
     - target: {fileID: 4803217825815482, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
       propertyPath: m_LocalPosition.z

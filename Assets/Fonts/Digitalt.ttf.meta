@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: dd34624fa2c5e1741b9e102b0f9a43e2
+timeCreated: 1513248881
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Digitalt
+  fontNames:
+  - Digitalt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2488a1cd8f460e147b691af73d14c232, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

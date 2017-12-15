@@ -9,6 +9,7 @@ public class CharacterBehaviour : MonoBehaviour
     public State state;
     public CameraBehaviour cameraBehaviour;
     public GameObject projectile;
+    public Transform playerTransform;
     public int maxLife;
     public int life;
     public int meleeDamage;
@@ -66,6 +67,7 @@ public class CharacterBehaviour : MonoBehaviour
         collisions = GetComponent<Collisions>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        playerTransform = GetComponent<Transform>();
         maxLife = 5;
         life = maxLife;
         meleeDamage = 5;
@@ -152,15 +154,17 @@ public class CharacterBehaviour : MonoBehaviour
         if (crouch)
         {
             canMove = false;
-            boxCollider2D.size = new Vector2(boxCollider2D.size.x, crouchYSize);
-            boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, crouchYOffset);
+            //boxCollider2D.size = new Vector2(boxCollider2D.size.x, crouchYSize);
+            //boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, crouchYOffset);
+            playerTransform.localScale = new Vector3(playerTransform.localScale.x, 0.6f, playerTransform.localScale.z);
         }
         else
         {
             canMove = true;
             crouch = false;
-            boxCollider2D.size = new Vector2(boxCollider2D.size.x, standYSize);
-            boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, standYOffset);
+            //boxCollider2D.size = new Vector2(boxCollider2D.size.x, standYSize);
+            //boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, standYOffset);
+            playerTransform.localScale = new Vector3(playerTransform.localScale.x, 1f, playerTransform.localScale.z);
         }
 
         if (isDashing)
@@ -388,7 +392,11 @@ public class CharacterBehaviour : MonoBehaviour
         if (canRecieveDamage)
         {
             life -= damage;
-            if (life <= 0) state = State.Dead;
+            if (life <= 0)
+            {
+                life = 0;
+                state = State.Dead;
+            }
         }
     }
     public void RecieveHazardDamage()

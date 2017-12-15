@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0546456e7f91f204f9772f2804d3dee7
 timeCreated: 1513353978
+=======
+guid: f8b06e7c8668eef4ca06e089401d4c3d
+timeCreated: 1513354366
+>>>>>>> b24f6a4318f4baf79093141c9d4f132a79b35c9d
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -32,22 +37,38 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: axe_pCube1Mat
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: b2d115de374b1604f94827c385e668b0, type: 2}
+=======
+    second: {fileID: 2100000, guid: a849d4579526b594182a9fdf207b4e27, type: 2}
+>>>>>>> b24f6a4318f4baf79093141c9d4f132a79b35c9d
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: axe_pPlane1Mat
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: aaabaf51461dbaf4c926d280278afdd1, type: 2}
+=======
+    second: {fileID: 2100000, guid: 759679f9d77227148a1a9f03506aba05, type: 2}
+>>>>>>> b24f6a4318f4baf79093141c9d4f132a79b35c9d
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pCylinder1_axeMat
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: f98a19ad38b20464ca1f83db37ab35a1, type: 2}
+=======
+    second: {fileID: 2100000, guid: 27ee48af81bc2b949ad9a05c221dd38a, type: 2}
+>>>>>>> b24f6a4318f4baf79093141c9d4f132a79b35c9d
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pCylinder2Mat
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: bc0a1cbec8954cb4d9245062fcee1e67, type: 2}
+=======
+    second: {fileID: 2100000, guid: 009ea3fcabcf9d54091905b380e182c2, type: 2}
+>>>>>>> b24f6a4318f4baf79093141c9d4f132a79b35c9d
   materials:
     importMaterials: 1
     materialName: 0

@@ -2098,6 +2098,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 266934751}
+  - component: {fileID: 266934752}
   m_Layer: 0
   m_Name: MenuTableChain
   m_TagString: Untagged
@@ -2123,6 +2124,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &266934752
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266934750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 129b11f5ca7bf404888d2b832e46b697, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &274395565
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class RaycastBehaviour : MonoBehaviour
 {
-    public float distance;
     public bool isColliding = false;
+
+    [Header("Ray properties")]
+    public Vector2 origin;
+    public Vector2 direction;
     public ContactFilter2D filter;
+    public float distance;
 
     void Start ()
     {
-        distance = 10;
+
 	}
 	
-	void Update ()
+	void MyFixedUpdate ()
     {
-        Physics2D.Raycast(this.transform.position, Vector2.up, distance);
-        //int numColliders = 
-	}
+        Vector3 pos = this.transform.position + (Vector3)origin;
+        RaycastHit2D[] results = new RaycastHit2D[1];
+
+        int numColliders = Physics2D.Raycast(pos, direction, filter, results, distance);
+        if(numColliders > 0)
+        {
+            isColliding = true;
+        }
+    }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Vector3 direction = transform.TransformDirection(Vector3.forward) * 5;
-        Gizmos.DrawRay(transform.position, direction);
+        Vector3 pos = this.transform.position + (Vector3)origin;
+        Gizmos.DrawRay(pos, direction);
     }
 }

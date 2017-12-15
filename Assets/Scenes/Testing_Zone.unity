@@ -846,8 +846,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02266f3914e2f284b99afee7f67aff49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0
   isColliding: 0
+  origin: {x: 0, y: 0}
+  direction: {x: 1, y: 0}
   filter:
     useTriggers: 0
     useLayerMask: 1
@@ -862,6 +863,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  distance: 10
 --- !u!212 &958647392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -913,7 +915,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 958647390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.54, y: 5.6405272, z: -0.421875}
+  m_LocalPosition: {x: -5.54, y: 5.07, z: -0.421875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1425,6 +1427,7 @@ MonoBehaviour:
   state: 0
   cameraBehaviour: {fileID: 1798539989}
   projectile: {fileID: 1956570658363080, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
+  maxLife: 0
   life: 0
   meleeDamage: 0
   rangedDamage: 0

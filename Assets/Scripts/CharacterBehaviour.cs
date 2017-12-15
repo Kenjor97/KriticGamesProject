@@ -9,6 +9,7 @@ public class CharacterBehaviour : MonoBehaviour
     public State state;
     public CameraBehaviour cameraBehaviour;
     public GameObject projectile;
+    public int maxLife;
     public int life;
     public int meleeDamage;
     public int rangedDamage;
@@ -65,7 +66,8 @@ public class CharacterBehaviour : MonoBehaviour
         collisions = GetComponent<Collisions>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
-        life = 10;
+        maxLife = 5;
+        life = maxLife;
         meleeDamage = 5;
         rangedDamage = 2;
         dashCD = 0.2f;

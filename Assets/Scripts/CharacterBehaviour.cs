@@ -387,6 +387,11 @@ public class CharacterBehaviour : MonoBehaviour
     {
         Instantiate(projectile, new Vector3(this.transform.position.x + attackBoxPos.x, this.transform.position.y + attackBoxPos.y, 0), new Quaternion(0, 0, 0, 0));
     }
+    public void RestoreLife(int heal)
+    {
+        life += heal;
+        if (life >= maxLife) life = maxLife;
+    }
     public void RecieveEnemyDamage(int damage)
     {
         if (canRecieveDamage)

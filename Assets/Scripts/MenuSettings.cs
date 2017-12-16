@@ -9,8 +9,8 @@ public class MenuSettings : MonoBehaviour
     public void Resolution(int res)
     {
         if (res == 1) Screen.SetResolution(1920, 1080, fullscreen);
-        if (res == 2) Screen.SetResolution(1280, 720, fullscreen);
-        if (res == 3) Screen.SetResolution(800, 600, fullscreen);
+        if (res == 2) Screen.SetResolution(1600, 1200, fullscreen);
+        if (res == 3) Screen.SetResolution(1280, 720, fullscreen);
     }
     public void Quality(int qua)
     {

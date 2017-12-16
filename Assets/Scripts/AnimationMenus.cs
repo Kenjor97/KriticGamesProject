@@ -7,6 +7,8 @@ public class AnimationMenus : MonoBehaviour
     public MouseCursor cursor;
     public Animator woodTable;
     public Animator anvil;
+    public GameObject pressEnterText;
+    public GameObject menuButtons;
 
 	// Use this for initialization
 	void Start ()
@@ -14,6 +16,8 @@ public class AnimationMenus : MonoBehaviour
         cursor = GetComponent<MouseCursor>();
         woodTable.enabled = false;
         anvil.enabled = false;
+        pressEnterText.SetActive(true);
+        menuButtons.SetActive(false);
 
 	}
 	
@@ -28,6 +32,8 @@ public class AnimationMenus : MonoBehaviour
             anvil.enabled = true;
             anvil.Rebind();
             woodTable.Rebind();
+            pressEnterText.SetActive(false);
+            menuButtons.SetActive(true);
         }
 
     }

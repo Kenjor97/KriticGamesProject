@@ -17,7 +17,7 @@ public class FadeOutScript : MonoBehaviour
         framesCounter++;
 
 
-        if(framesCounter >= 120)
+        if(framesCounter >= 250)
         {
             SceneManager.LoadScene("0_Title");
         }

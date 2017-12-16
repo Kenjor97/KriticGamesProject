@@ -46,7 +46,6 @@ public class Fade : MonoBehaviour
         if (alpha == 1.0f)
         {
             fadeInGameObject.SetActive(false);
-            fadeOut.Activate();
         }
     }
 

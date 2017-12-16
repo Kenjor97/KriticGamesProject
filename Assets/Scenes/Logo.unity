@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 1042766521}
   - component: {fileID: 1042766523}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 1531108123}
   - component: {fileID: 1531108122}
   - component: {fileID: 1531108121}
+  - component: {fileID: 1531108125}
   m_Layer: 5
   m_Name: LogoCanvas
   m_TagString: Untagged
@@ -426,6 +427,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1531108125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531108120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e197277566db24098d01f7183de6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framesCounter: 0
 --- !u!1 &1984135104
 GameObject:
   m_ObjectHideFlags: 0

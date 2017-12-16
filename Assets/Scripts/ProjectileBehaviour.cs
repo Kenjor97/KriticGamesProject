@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
     public Transform projectile;
+    public PauseManager pause;
     public CharacterBehaviour player;
     public float speed = 7.5f;
     public float rotateSpeed = 500;
@@ -13,6 +14,7 @@ public class ProjectileBehaviour : MonoBehaviour
     void Start ()
     {
         projectile = GetComponent<Transform>();
+        pause = GameObject.FindGameObjectWithTag("Manager").GetComponent<PauseManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehaviour>();
         if (player.isFacingRight) facingRight = true;
         else facingRight = false;
@@ -27,15 +29,18 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (facingRight)
+        if (!pause.pause)
         {
-            projectile.localPosition = new Vector3(projectile.localPosition.x + Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
-            projectile.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
-        }
-        else
-        {
-            projectile.localPosition = new Vector3(projectile.localPosition.x - Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
-            projectile.Rotate(Vector3.forward * Time.deltaTime * -rotateSpeed);
+            if (facingRight)
+            {
+                projectile.localPosition = new Vector3(projectile.localPosition.x + Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
+                projectile.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
+            }
+            else
+            {
+                projectile.localPosition = new Vector3(projectile.localPosition.x - Time.deltaTime * speed, projectile.localPosition.y, projectile.localPosition.z);
+                projectile.Rotate(Vector3.forward * Time.deltaTime * -rotateSpeed);
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

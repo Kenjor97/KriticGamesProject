@@ -8,6 +8,7 @@ public class CharacterBehaviour : MonoBehaviour
     public enum State { Default, Dead, GodMode }
     public State state;
     public CameraBehaviour cameraBehaviour;
+    public PauseManager pause;
     public GameObject projectile;
     public Transform playerTransform;
     public int maxLife;
@@ -65,6 +66,7 @@ public class CharacterBehaviour : MonoBehaviour
     void Start ()
     {
         collisions = GetComponent<Collisions>();
+        pause = GameObject.FindGameObjectWithTag("Manager").GetComponent<PauseManager>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         playerTransform = GetComponent<Transform>();
@@ -82,111 +84,117 @@ public class CharacterBehaviour : MonoBehaviour
 	
 	void Update ()
     {
-        switch(state)
+        if (!pause.pause)
         {
-            case State.Default:
-                DefaultUpdate();
-                break;
-            case State.Dead:
-                Dead();
-                HorizontalMovement();
-                break;
-            case State.GodMode:
-                DefaultUpdate();
-                Invulnerable();
-                Fly();
-                Ghost();
-                break;
-            default:
-                break;
+            switch (state)
+            {
+                case State.Default:
+                    DefaultUpdate();
+                    break;
+                case State.Dead:
+                    Dead();
+                    HorizontalMovement();
+                    break;
+                case State.GodMode:
+                    DefaultUpdate();
+                    Invulnerable();
+                    Fly();
+                    Ghost();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if(state == State.Default)
+        if (!pause.pause)
         {
-            collisions.MyFixedUpdate();
-            Physics2D.IgnoreLayerCollision(8, 9, false);
-        }
-
-        if(isJumping)
-        {
-            isJumping = false;
-            rb.velocity = new Vector2(0, 0);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-
-        if (isWallJumping)
-        {
-            //wallJumpCD -= Time.deltaTime;
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            //rb.AddForce(new Vector2(-wallJumpForce, jumpForce), ForceMode2D.Impulse);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            if(isFacingRight)
+            if (state == State.Default)
             {
-                rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
-                //rb.AddForce(new Vector2(-1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
+                collisions.MyFixedUpdate();
+                Physics2D.IgnoreLayerCollision(8, 9, false);
             }
-            else if(!isFacingRight)
+
+            if (isJumping)
             {
-                rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
-                //rb.AddForce(new Vector2(1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
-            }
-            //if(wallJumpCD <=0)
-            //{
-            //    wallJumpCD = 0.2f;
-            //    isWallJumping = false;
-            //    canWallJump = true;
-            //}
-            isWallJumping = false;
-            canWallJump = true;
-        }
-        
-        rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
-
-        if(onLadder)
-        {
-            canDoubleJump = false;
-            rb.velocity = new Vector2(rb.velocity.x, verticalSpeed);
-        }
-
-        if (crouch)
-        {
-            canMove = false;
-            //boxCollider2D.size = new Vector2(boxCollider2D.size.x, crouchYSize);
-            //boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, crouchYOffset);
-            playerTransform.localScale = new Vector3(playerTransform.localScale.x, 0.6f, playerTransform.localScale.z);
-        }
-        else
-        {
-            canMove = true;
-            crouch = false;
-            //boxCollider2D.size = new Vector2(boxCollider2D.size.x, standYSize);
-            //boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, standYOffset);
-            playerTransform.localScale = new Vector3(playerTransform.localScale.x, 1f, playerTransform.localScale.z);
-        }
-
-        if (isDashing)
-        {
-            dashCD -= Time.deltaTime;
-            if (isFacingRight)
-            {
+                isJumping = false;
                 rb.velocity = new Vector2(0, 0);
-
-                rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
-            else if (!isFacingRight)
-            {
-                rb.velocity = new Vector2(0, 0);
 
-                rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
-            }
-            if (dashCD <= 0)
+            if (isWallJumping)
             {
-                dashCD = 0.2f;
-                isDashing = false;
-                canDash = true;
+                //wallJumpCD -= Time.deltaTime;
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                //rb.AddForce(new Vector2(-wallJumpForce, jumpForce), ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                if (isFacingRight)
+                {
+                    rb.AddForce(Vector2.left * wallJumpForce, ForceMode2D.Impulse);
+                    //rb.AddForce(new Vector2(-1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
+                }
+                else if (!isFacingRight)
+                {
+                    rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
+                    //rb.AddForce(new Vector2(1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
+                }
+                //if(wallJumpCD <=0)
+                //{
+                //    wallJumpCD = 0.2f;
+                //    isWallJumping = false;
+                //    canWallJump = true;
+                //}
+                isWallJumping = false;
+                canWallJump = true;
+            }
+
+            rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
+
+            if (onLadder)
+            {
+                canDoubleJump = false;
+                rb.velocity = new Vector2(rb.velocity.x, verticalSpeed);
+            }
+
+            if (crouch)
+            {
+                canMove = false;
+                //boxCollider2D.size = new Vector2(boxCollider2D.size.x, crouchYSize);
+                //boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, crouchYOffset);
+                playerTransform.localScale = new Vector3(playerTransform.localScale.x, 0.6f, playerTransform.localScale.z);
+            }
+            else
+            {
+                canMove = true;
+                crouch = false;
+                //boxCollider2D.size = new Vector2(boxCollider2D.size.x, standYSize);
+                //boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, standYOffset);
+                playerTransform.localScale = new Vector3(playerTransform.localScale.x, 1f, playerTransform.localScale.z);
+            }
+
+            if (isDashing)
+            {
+                dashCD -= Time.deltaTime;
+                if (isFacingRight)
+                {
+                    rb.velocity = new Vector2(0, 0);
+
+                    rb.AddForce(Vector2.right * dashForce, ForceMode2D.Impulse);
+                }
+                else if (!isFacingRight)
+                {
+                    rb.velocity = new Vector2(0, 0);
+
+                    rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
+                }
+                if (dashCD <= 0)
+                {
+                    dashCD = 0.2f;
+                    isDashing = false;
+                    canDash = true;
+                }
             }
         }
     }

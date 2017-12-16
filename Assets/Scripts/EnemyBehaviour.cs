@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     public bool isAttacking = false;
     public bool isFacingRight = false;
 
+    public PauseManager pause;
     public GameObject enemyShot;
     public BoxCollider2D boxCollider2D;
     public Vector2 attackBoxPos;
@@ -26,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start ()
     {
+        pause = GameObject.FindGameObjectWithTag("Manager").GetComponent<PauseManager>();
         life = 10;
         damage = 1;
         attackCD = 2f;
@@ -33,16 +35,19 @@ public class EnemyBehaviour : MonoBehaviour
     }
 	void Update ()
     {
-        switch (state)
+        if (!pause.pause)
         {
-            case State.Active:
-                Active();
-                break;
-            case State.Dead:
-                Dead();
-                break;
-            default:
-                break;
+            switch (state)
+            {
+                case State.Active:
+                    Active();
+                    break;
+                case State.Dead:
+                    Dead();
+                    break;
+                default:
+                    break;
+            }
         }
     }
     void Active()

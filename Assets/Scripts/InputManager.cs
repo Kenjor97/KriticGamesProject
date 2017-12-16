@@ -5,10 +5,12 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public CharacterBehaviour player;
+    public PauseManager pause;
 
 	void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehaviour>();
+        pause = GetComponent<PauseManager>();
 	}
 	
 	void Update ()
@@ -34,7 +36,11 @@ public class InputManager : MonoBehaviour
 
     void InputPause()
     {
-        if(Input.GetButtonDown("Pause")) Debug.Log("Pause");
+        if (Input.GetButtonDown("Pause"))
+        {
+            Debug.Log("Pause");
+            pause.Pause();
+        }
     }
     void InputAxis()
     {

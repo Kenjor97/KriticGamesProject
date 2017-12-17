@@ -7,9 +7,9 @@ public class Fade : MonoBehaviour
     public GameObject fadeInGameObject;
     public Texture2D fadeInTexture;    // the texture that will overlay the screen. This can be a black image or a loading graphic
     public float fadeSpeed = 0.8f;      // the fading speed
-
+    public GameObject fadeOutObejct;
     private int drawDepth = -1000;      // the texture's order in the draw hierarchy: a low number means it renders on top
-    private float alpha = 0.0f;         // the texture's alpha value between 0 and 1
+    public float alpha = 0.0f;         // the texture's alpha value between 0 and 1
     private int fadeDir = 1;           // the direction to fade: in = -1 or out = 1
 
     void OnGUI()
@@ -22,7 +22,7 @@ public class Fade : MonoBehaviour
         // set color of our GUI (in this case our texture). All color values remain the same & the Alpha is set to the alpha variable
         GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, alpha);
         GUI.depth = drawDepth;                                                              // make the black texture render on top (drawn last)
-        GUI.DrawTexture(new Rect(Screen.width/3, 0, fadeInTexture.width/3, fadeInTexture.height/3), fadeInTexture);       // draw the texture to fit the entire screen area
+        GUI.DrawTexture(new Rect(Screen.width/3, Screen.height/6, fadeInTexture.width/3, fadeInTexture.height/3), fadeInTexture);       // draw the texture to fit the entire screen area
     }
 
     // sets fadeDir to the direction parameter making the scene fade in if -1 and out if 1
@@ -46,7 +46,6 @@ public class Fade : MonoBehaviour
         if (alpha == 1.0f)
         {
             fadeInGameObject.SetActive(false);
-            fadeOut.BeginFade(-1);
         }
     }
 

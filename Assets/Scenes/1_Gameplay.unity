@@ -7455,7 +7455,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798539983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.742, z: -15}
+  m_LocalPosition: {x: -25, y: 1.742, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8198,11 +8198,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 43.12
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 37.49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8258,37 +8258,37 @@ Prefab:
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: walkSpeed
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: runSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: onLadderSpeed
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: jumpWalkForce
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: jumpRunForce
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: jumpForce
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: wallJumpForce
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}

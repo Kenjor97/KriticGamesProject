@@ -8,7 +8,7 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()

@@ -52,6 +52,12 @@ public class ProjectileBehaviour : MonoBehaviour
             collision.GetComponent<EnemyBehaviour>().RecieveDamage(player.rangedDamage);
             Destroy(this.gameObject);
         }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("boss"))
+        {
+            Debug.Log("Enemy: " + collision);
+            collision.GetComponent<Boss1Behaviour>().RecieveDamage(player.rangedDamage);
+            Destroy(this.gameObject);
+        }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             Debug.Log("Destroyed by ground");

@@ -391,7 +391,8 @@ public class CharacterBehaviour : MonoBehaviour
         if (numColliders > 0)
         {
             Debug.Log("Attacking Enemy");
-            results[0].GetComponent<EnemyBehaviour>().RecieveDamage(meleeDamage);
+            if(results[0].tag == "Enemy") results[0].GetComponent<EnemyBehaviour>().RecieveDamage(meleeDamage);
+            if(results[0].tag == "Boss") results[0].GetComponent<Boss1Behaviour>().RecieveDamage(meleeDamage);
         }
     }
     public void Attack2()

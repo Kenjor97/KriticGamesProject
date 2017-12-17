@@ -8,6 +8,7 @@ TagManager:
   - Manager
   - Hearts
   - PauseMenu
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - enemyshot
   - prop
   - manager
-  - 
+  - boss
   - 
   - 
   - 

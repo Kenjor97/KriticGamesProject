@@ -13,6 +13,7 @@ public class CharacterBehaviour : MonoBehaviour
     public Transform playerTransform;
     public int maxLife;
     public int life;
+    public int lifePowerUp;
     public int meleeDamage;
     public int rangedDamage;
     [Header("State")]
@@ -70,8 +71,9 @@ public class CharacterBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         playerTransform = GetComponent<Transform>();
-        maxLife = 5;
+        maxLife = 3;
         life = maxLife;
+        lifePowerUp = 0;
         meleeDamage = 5;
         rangedDamage = 2;
         dashCD = 0.2f;
@@ -115,6 +117,7 @@ public class CharacterBehaviour : MonoBehaviour
             {
                 collisions.MyFixedUpdate();
                 Physics2D.IgnoreLayerCollision(8, 9, false);
+                canRecieveDamage = true;
             }
 
             if (isJumping)
@@ -399,6 +402,16 @@ public class CharacterBehaviour : MonoBehaviour
     {
         life += heal;
         if (life >= maxLife) life = maxLife;
+    }
+    public void LifePowerUp()
+    {
+        lifePowerUp++;
+        if(lifePowerUp == 3)
+        {
+            lifePowerUp = 0;
+            maxLife++;
+            life = maxLife;
+        }
     }
     public void RecieveEnemyDamage(int damage)
     {

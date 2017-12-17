@@ -22,7 +22,8 @@ public class HealthCoinBehaviour : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("player"))
         {
             Debug.Log(collision);
-            collision.GetComponent<CharacterBehaviour>().RestoreLife(coinHeal);
+            //collision.GetComponent<CharacterBehaviour>().RestoreLife(coinHeal);
+            collision.GetComponent<CharacterBehaviour>().LifePowerUp();
             Destroy(this.gameObject);
         }
     }

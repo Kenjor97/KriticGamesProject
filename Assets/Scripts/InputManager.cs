@@ -17,19 +17,22 @@ public class InputManager : MonoBehaviour
     {
         // Leer para pausar el juego
         InputPause();
-        // movimiento del player
-        InputAxis();
-        // salto del player
-        InputJump();
-        // alternar entre caminar y correr para el player
-        InputRun();
-        // alternar entre agachado y no agachado
-        InputCrouch();
-        // dash
-        InputDash();
-        // ataques
-        InputAttack();
-        InputAttack2();
+        if (!pause.pause)
+        {
+            // movimiento del player
+            InputAxis();
+            // salto del player
+            InputJump();
+            // alternar entre caminar y correr para el player
+            InputRun();
+            // alternar entre agachado y no agachado
+            InputCrouch();
+            // dash
+            InputDash();
+            // ataques
+            InputAttack();
+            InputAttack2();
+        }
         // god mode
         InputGodMode();
     }

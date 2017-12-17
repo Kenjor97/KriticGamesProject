@@ -9,6 +9,8 @@ public class AnimationMenus : MonoBehaviour
     public Animator anvil;
     public GameObject pressEnterText;
     public GameObject menuButtons;
+    public AudioSource chainsSound;
+    public AudioSource chainsDownSound;
 
 	// Use this for initialization
 	void Start ()
@@ -18,7 +20,9 @@ public class AnimationMenus : MonoBehaviour
         anvil.enabled = false;
         pressEnterText.SetActive(true);
         menuButtons.SetActive(false);
-	}
+        chainsSound = GetComponent<AudioSource>();
+        chainsDownSound = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -33,6 +37,8 @@ public class AnimationMenus : MonoBehaviour
             woodTable.Rebind();
             pressEnterText.SetActive(false);
             menuButtons.SetActive(true);
+            chainsSound.Play();
+            chainsDownSound.PlayDelayed(2.0f);
         }
 
     }

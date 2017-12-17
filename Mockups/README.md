@@ -37,3 +37,6 @@
 
 ![](https://github.com/Kenjor97/KriticGamesProject/blob/master/Mockups/mockup_pause_screen_01.png)
 
+## Game over 
+
+![](https://github.com/Kenjor97/KriticGamesProject/blob/master/Mockups/mockup_game_over_screen_01.png)

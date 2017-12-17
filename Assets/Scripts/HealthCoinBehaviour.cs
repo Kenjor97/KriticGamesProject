@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HealthCoinBehaviour : MonoBehaviour
 {
-    public int coinHeal;
+    //public int coinHeal;
 
 	void Start ()
     {
-        coinHeal = 1;
+        //coinHeal = 1;
 	}
 
 	void Update ()

@@ -16,6 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public PauseManager pause;
     public GameObject enemyShot;
+    public GameObject heart;
     public BoxCollider2D boxCollider2D;
     public Vector2 attackBoxPos;
     public Vector2 attackBoxSize;
@@ -93,6 +94,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Dead()
     {
+        Instantiate(heart, new Vector3(this.transform.position.x, this.transform.position.y + 1, 0), new Quaternion(0, 0, 0, 0));
         Destroy(this.gameObject);
     }
     void Flip()

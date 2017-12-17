@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4819454069082906}
   - component: {fileID: 212637181262210882}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: EnemySprite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,9 @@ MonoBehaviour:
   canAttack: 0
   isAttacking: 0
   isFacingRight: 0
+  pause: {fileID: 0}
   enemyShot: {fileID: 1184459757434610, guid: 8f1f7a6f36e4fcd4b822b833cc5a1c6f, type: 2}
+  heart: {fileID: 1307901740180518, guid: 1d11cea8c600c184d9cf54a7568c3d22, type: 2}
   boxCollider2D: {fileID: 0}
   attackBoxPos: {x: -4, y: 0.8}
   attackBoxSize: {x: 7, y: 1.5}

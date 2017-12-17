@@ -14,7 +14,7 @@
 - [x] Screen Mockups
 ### General
 - [ ] General Phase 1: Transition animation between scenes.
-- [ ] General Phase 2: GOD Mode implemented.
+- [x] General Phase 2: GOD Mode implemented.
 - [ ] General Phase 3: Victory/defeat conditions implemented.
 ### Screen: Logo
 - [ ] Logo Phase 1: Entry animation.
@@ -27,15 +27,15 @@
 - [ ] OP1: Resolution.
 - [ ] OP2: Quality.
 ### Screen: Gameplay (Main Level)
-- [ ] Level Phase 1: Basic mechanics.
+- [x] Level Phase 1: Basic mechanics.
 - [ ] Level Phase 2: Temporary model.
 - [ ] Props Phase 1: 8 final props implemented.
 - [ ] Player Phase 1: Sprite or final model with temporary texture.
 - [ ] Enemy/NPC A Phase 1: Sprite or final model with temporary texture.
 - [ ] Boss/NPC Phase 1: Temporary model.
-- [ ] Pause Phase 1: Pause option implemented.
-- [ ] Interface Phase 1: Basic UI elements.
-- [ ] Inputs Phase 1: Keyboard and mouse controls.
+- [x] Pause Phase 1: Pause option implemented.
+- [x] Interface Phase 1: Basic UI elements.
+- [x] Inputs Phase 1: Keyboard and mouse controls.
 - [ ] Particles Phase 1: 5 particles systems.
 - [ ] Sounds Phase 1: 5 sounds implemented.
 ### Screen: Ending

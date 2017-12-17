@@ -7,7 +7,7 @@ public class EnemyShotBehaviour : MonoBehaviour
     public PauseManager pause;
     public Transform enemyShot;
     public EnemyBehaviour enemy;
-    public float speed = 5f;
+    public float speed = 6f;
     public bool facingRight;
 
     void Start()

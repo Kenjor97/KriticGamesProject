@@ -14,6 +14,7 @@ public class Boss1Behaviour : MonoBehaviour
     public bool isAttacking = false;
 
     public PauseManager pause;
+    public GameObject bombShot;
     public BoxCollider2D boxCollider2D;
     public Vector2 attackBoxPos;
     public Vector2 attackBoxSize;
@@ -57,6 +58,20 @@ public class Boss1Behaviour : MonoBehaviour
             canAttack = true;
         }
         else canAttack = false;
+
+        if (canAttack) Attacking();
+
+        if (isAttacking)
+        {
+            attackCD -= Time.deltaTime;
+
+            if (attackCD <= 0)
+            {
+                attackCD = 2f;
+                isAttacking = false;
+                Instantiate(bombShot, new Vector3(this.transform.position.x, this.transform.position.y - 1 /*+ attackBoxPos.y - 0.5f*/, 0), new Quaternion(0, 0, 0, 0));
+            }
+        }
     }
     void Attacking()
     {

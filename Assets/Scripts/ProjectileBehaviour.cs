@@ -63,5 +63,10 @@ public class ProjectileBehaviour : MonoBehaviour
             Debug.Log("Destroyed by ground");
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("bossshot"))
+        {
+            Debug.Log("Destroyed by" + collision);
+            Destroy(this.gameObject);
+        }
     }
 }

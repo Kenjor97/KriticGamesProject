@@ -9,6 +9,9 @@ TagManager:
   - Hearts
   - PauseMenu
   - Boss
+  - EndingWin
+  - EndingLose
+  - EndingImage
   layers:
   - Default
   - TransparentFX

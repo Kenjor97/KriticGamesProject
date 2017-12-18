@@ -13,6 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
     public bool canAttack = false;
     public bool isAttacking = false;
     public bool isFacingRight = false;
+    public AudioSource shotAudio;
 
     public PauseManager pause;
     public GameObject enemyShot;
@@ -33,6 +34,7 @@ public class EnemyBehaviour : MonoBehaviour
         damage = 1;
         attackCD = 2f;
         boxCollider2D = GetComponent<BoxCollider2D>();
+        shotAudio = GetComponent<AudioSource>();
     }
 	void Update ()
     {
@@ -116,6 +118,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     public void RecieveDamage(int damage)
     {
+        shotAudio.Play();
         life -= damage;
         if (life <= 0) state = State.Dead;
     }

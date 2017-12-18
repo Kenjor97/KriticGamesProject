@@ -6,12 +6,14 @@ public class InputManager : MonoBehaviour
 {
     public CharacterBehaviour player;
     public PauseManager pause;
+    public AudioSource pauseAudio;
 
-	void Start ()
+    void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehaviour>();
         pause = GetComponent<PauseManager>();
-	}
+        pauseAudio = GetComponent<AudioSource>();
+    }
 	
 	void Update ()
     {
@@ -43,6 +45,7 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Pause");
             pause.Pause();
+            pauseAudio.Play();
         }
     }
     void InputAxis()

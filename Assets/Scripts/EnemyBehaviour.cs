@@ -17,6 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public PauseManager pause;
     public GameObject enemyShot;
+    EnemyShotBehaviour enemyShotScript;
     public GameObject heart;
     public BoxCollider2D boxCollider2D;
     public Vector2 attackBoxPos;
@@ -30,6 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
     void Start ()
     {
         pause = GameObject.FindGameObjectWithTag("Manager").GetComponent<PauseManager>();
+        enemyShotScript = enemyShot.GetComponent<EnemyShotBehaviour>();
         life = 10;
         damage = 1;
         attackCD = 2f;
@@ -86,7 +88,9 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 attackCD = 2f;
                 isAttacking = false;
-                Instantiate(enemyShot, new Vector3(this.transform.position.x, this.transform.position.y + attackBoxPos.y + 0.5f, 0), new Quaternion(0, 0, 0, 0));
+
+                    enemyShotScript.SetSpeed(isFacingRight);
+                    Instantiate(enemyShot, new Vector3(this.transform.position.x, this.transform.position.y + attackBoxPos.y + 0.5f, 0), new Quaternion(0, 0, 0, 0));
             }
         }
     }

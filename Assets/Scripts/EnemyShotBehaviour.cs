@@ -5,18 +5,14 @@ using UnityEngine;
 public class EnemyShotBehaviour : MonoBehaviour
 {
     public PauseManager pause;
-    public Transform enemyShot;
     public EnemyBehaviour enemy;
-    public float speed = 6f;
+    public float speed;
     public bool facingRight;
 
     void Start()
     {
-        enemyShot = GetComponent<Transform>();
         pause = GameObject.FindGameObjectWithTag("Manager").GetComponent<PauseManager>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyBehaviour>();
-        if (enemy.isFacingRight) facingRight = true;
-        else facingRight = false;
 
         Destroy(this.gameObject, 5f);
     }
@@ -30,16 +26,16 @@ public class EnemyShotBehaviour : MonoBehaviour
     {
         if (!pause.pause)
         {
-            if (facingRight)
-            {
-                enemyShot.localPosition = new Vector3(enemyShot.localPosition.x + Time.deltaTime * speed, enemyShot.localPosition.y, enemyShot.localPosition.z);
-            }
-            else
-            {
-                enemyShot.localPosition = new Vector3(enemyShot.localPosition.x - Time.deltaTime * speed, enemyShot.localPosition.y, enemyShot.localPosition.z);
-            }
+            this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * speed, this.transform.localPosition.y, this.transform.localPosition.z);
         }
     }
+
+    public void SetSpeed(bool isFacingRight)
+    {
+        if(isFacingRight) speed = 6;
+        else speed = -6;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("OnTriggerEnter2D Event " + collision.gameObject.name);

@@ -32,6 +32,8 @@ public class CharacterBehaviour : MonoBehaviour
     public bool canWallJump = false;
     public bool isWallJumping = false;
     public bool isDashing = false;
+    [Header("Power Ups")]
+    public bool hasBoots = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;
@@ -353,14 +355,14 @@ public class CharacterBehaviour : MonoBehaviour
             Jump();
         }
 
-        if(collisions.isFalling && canDoubleJump)
+        if(collisions.isFalling && canDoubleJump && hasBoots)
         {
             if(isRunning) jumpForce = jumpRunForce;
             else jumpForce = jumpWalkForce;
             DoubleJump();
         }
 
-        if(collisions.isFalling && canWallJump)
+        if(collisions.isFalling && canWallJump && hasBoots)
         {
             //if (isRunning) jumpForce = jumpRunForce;
             //else jumpForce = jumpWalkForce;
@@ -376,7 +378,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
     public void Dash()
     {
-        if(canDash)
+        if(canDash && hasBoots)
         {
             Dashing();
         }

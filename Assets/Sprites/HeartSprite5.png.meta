@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e3510ee6c57607741b014d74a5be8241
-timeCreated: 1516640779
+timeCreated: 1513526619
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -95,19 +95,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 22, y: 17.5}
-        - {x: 20, y: 15.5}
-        - {x: 19, y: 13.5}
-        - {x: 20, y: 13.5}
-        - {x: 18, y: 17.5}
-        - {x: -94, y: 17.5}
-        - {x: -96, y: 14.5}
-        - {x: -96, y: -13.5}
-        - {x: -87, y: -17.5}
-        - {x: 85, y: -17.5}
-        - {x: 96, y: -8.5}
-        - {x: 96, y: 17.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -121,24 +109,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 94, y: 17.5}
-        - {x: 22, y: 17.5}
-        - {x: 20, y: 15.5}
-        - {x: 19, y: 13.5}
-        - {x: 20, y: 13.5}
-        - {x: 18, y: 17.5}
-        - {x: -94, y: 17.5}
-        - {x: -96, y: 14.5}
-        - {x: -96, y: -13.5}
-        - {x: -90, y: -17.5}
-        - {x: 86, y: -17.5}
-        - {x: 96, y: -14.5}
-        - {x: 96, y: 15.5}
-      - - {x: 76, y: -7.5}
-        - {x: 65, y: 1.5}
-        - {x: 78, y: 2.5}
-        - {x: 86, y: 3.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -152,26 +123,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 23, y: 17.5}
-        - {x: 20, y: 15.5}
-        - {x: 19, y: 13.5}
-        - {x: 20, y: 13.5}
-        - {x: 18, y: 17.5}
-        - {x: -94, y: 17.5}
-        - {x: -96, y: 14.5}
-        - {x: -96, y: -14.5}
-        - {x: -93, y: -17.5}
-        - {x: 96, y: -17.5}
-        - {x: 96, y: 17.5}
-      - - {x: 32, y: -1.5}
-        - {x: 32, y: 6.5}
-        - {x: 41, y: 2.5}
-        - {x: 49, y: 2.5}
-      - - {x: 76, y: -7.5}
-        - {x: 65, y: 1.5}
-        - {x: 78, y: 2.5}
-        - {x: 86, y: 3.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -185,32 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 23, y: 17.5}
-        - {x: 20, y: 15.5}
-        - {x: 19, y: 13.5}
-        - {x: 20, y: 13.5}
-        - {x: 18, y: 17.5}
-        - {x: -94, y: 17.5}
-        - {x: -96, y: 14.5}
-        - {x: -96, y: -14.5}
-        - {x: -92, y: -17.5}
-        - {x: 88, y: -17.5}
-        - {x: 96, y: -12.5}
-        - {x: 96, y: 17.5}
-      - - {x: -9, y: 3.5}
-        - {x: -10, y: 12.5}
-        - {x: -11, y: 11.5}
-        - {x: -8, y: 8.5}
-        - {x: -7, y: 0.5}
-      - - {x: 32, y: -1.5}
-        - {x: 32, y: 6.5}
-        - {x: 41, y: 2.5}
-        - {x: 49, y: 2.5}
-      - - {x: 76, y: -7.5}
-        - {x: 65, y: 1.5}
-        - {x: 78, y: 2.5}
-        - {x: 86, y: 3.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -224,32 +151,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 23, y: 17.5}
-        - {x: 20, y: 15.5}
-        - {x: 19, y: 13.5}
-        - {x: 20, y: 13.5}
-        - {x: 19, y: 15.5}
-        - {x: 20, y: 17.5}
-        - {x: -96, y: 17.5}
-        - {x: -96, y: -17.5}
-        - {x: 96, y: -17.5}
-        - {x: 96, y: 17.5}
-      - - {x: -31, y: 11.5}
-        - {x: -28, y: 8.5}
-      - - {x: -9, y: 3.5}
-        - {x: -10, y: 12.5}
-        - {x: -11, y: 11.5}
-        - {x: -8, y: 8.5}
-        - {x: -7, y: 0.5}
-      - - {x: 32, y: -1.5}
-        - {x: 32, y: 6.5}
-        - {x: 41, y: 2.5}
-        - {x: 49, y: 2.5}
-      - - {x: 76, y: -7.5}
-        - {x: 65, y: 1.5}
-        - {x: 78, y: 2.5}
-        - {x: 86, y: 3.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -263,47 +165,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 23, y: 17.5}
-        - {x: 20, y: 15.5}
-        - {x: 19, y: 13.5}
-        - {x: 20, y: 13.5}
-        - {x: 19, y: 15.5}
-        - {x: 17, y: 17.5}
-        - {x: -93, y: 17.5}
-        - {x: -96, y: 15.5}
-        - {x: -96, y: -5.5}
-        - {x: -93, y: -17.5}
-        - {x: 87, y: -17.5}
-        - {x: 96, y: -12.5}
-        - {x: 96, y: 17.5}
-      - - {x: -40, y: -7.5}
-        - {x: -44, y: 0.5}
-        - {x: -36, y: 2.5}
-        - {x: -30, y: 10.5}
-      - - {x: -88, y: 10.5}
-        - {x: -87, y: 11.5}
-        - {x: -85, y: 7.5}
-        - {x: -76, y: 2.5}
-        - {x: -68, y: 8.5}
-        - {x: -65, y: 11.5}
-        - {x: -66, y: 11.5}
-        - {x: -65, y: 9.5}
-        - {x: -67, y: 3.5}
-        - {x: -78, y: -10.5}
-      - - {x: -9, y: 3.5}
-        - {x: -10, y: 12.5}
-        - {x: -11, y: 11.5}
-        - {x: -8, y: 8.5}
-        - {x: -7, y: 0.5}
-      - - {x: 32, y: -1.5}
-        - {x: 32, y: 6.5}
-        - {x: 41, y: 2.5}
-        - {x: 49, y: 2.5}
-      - - {x: 76, y: -7.5}
-        - {x: 65, y: 1.5}
-        - {x: 78, y: 2.5}
-        - {x: 86, y: 3.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -315,16 +177,9 @@ TextureImporter:
         width: 39
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -19.5, y: 20}
-        - {x: -19.5, y: -11}
-        - {x: -7.5, y: -20}
-        - {x: 4.5, y: -20}
-        - {x: 18.5, y: -5}
-        - {x: 19.5, y: -4}
-        - {x: 19.5, y: 20}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     outline: []

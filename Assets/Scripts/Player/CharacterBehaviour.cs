@@ -202,6 +202,7 @@ public class CharacterBehaviour : MonoBehaviour
                 }
             }
         }
+        //if (pause.pause) axis = new Vector2(0, 0);
     }
 
     protected virtual void DefaultUpdate()
@@ -212,11 +213,7 @@ public class CharacterBehaviour : MonoBehaviour
         VerticalMovement();
     }
 
-    void Dead()
-    {
-        canMove = false;
-    }
-
+    #region MOVEMENT
     void HorizontalMovement()
     {
         if(!canMove)
@@ -260,6 +257,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         horizontalSpeed = axis.x * movementSpeed;
     }
+
     void VerticalMovement()
     {
         crouch = false;
@@ -267,25 +265,43 @@ public class CharacterBehaviour : MonoBehaviour
         //isLookingUp = false;
         verticalSpeed = axis.y * onLadderSpeed;        
     }
+    #endregion
+
+    #region MECHANICS
     void Jump()
     {
         isJumping = true;
     }
+
     void DoubleJump()
     {
         isJumping = true;
         canDoubleJump = false;
     }
+
     void WallJump()
     {
         isWallJumping = true;
         canWallJump = false;
     }
+
     void Dashing()
     {
         isDashing = true;
         canDash = false;
     }
+    
+    void Crouching()
+    {
+        crouch = true;
+    }
+    #endregion
+
+    void Dead()
+    {
+        canMove = false;
+    }
+
     void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -295,10 +311,15 @@ public class CharacterBehaviour : MonoBehaviour
         cameraBehaviour.offSet.x *= -1;
         attackBoxPos.x *= -1;
     }
-    void Crouching()
+
+    void OnDrawGizmosSelected()
     {
-        crouch = true;
+        Gizmos.color = Color.black;
+        Vector3 pos = this.transform.position + (Vector3)attackBoxPos;
+        Gizmos.DrawWireCube(pos, attackBoxSize);
     }
+
+    #region GOD MODE
     void Invulnerable()
     {
         canRecieveDamage = false;
@@ -312,12 +333,9 @@ public class CharacterBehaviour : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(8, 9, true);
     }
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.black;
-        Vector3 pos = this.transform.position + (Vector3)attackBoxPos;
-        Gizmos.DrawWireCube(pos, attackBoxSize);
-    }
+    #endregion
+
+    #region COLLIDER TRIGGERS
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("ladder"))
@@ -334,7 +352,9 @@ public class CharacterBehaviour : MonoBehaviour
             rb.gravityScale = 1;
         }
     }
-    #region Public
+    #endregion
+
+    #region PUBLIC METHODS
     public void SetAxis(Vector2 inputAxis)
     {
         axis = inputAxis;
@@ -446,4 +466,5 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
     #endregion
+
 }

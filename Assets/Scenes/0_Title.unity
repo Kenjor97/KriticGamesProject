@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -122,6 +122,66 @@ Animator:
   m_PrefabParentObject: {fileID: 95778688611103600, guid: a47f2d786ecf22440a6f1c9095a93b98,
     type: 2}
   m_PrefabInternal: {fileID: 1756931587}
+--- !u!1 &349682179 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1348176731871636, guid: 485c230d42b383f4c84e146eda79bb0f,
+    type: 2}
+  m_PrefabInternal: {fileID: 674813787}
+--- !u!114 &349682181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349682179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db7d4eecede23c4a996598275846eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initValue: 0
+  endValue: 100
+  desiredTime: 750
+  delay: 0
+--- !u!114 &349682184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349682179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdad25d2307c13a4489b3148bc2633a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  type: 8
+  iniValue: {x: 0, y: -100, z: 0}
+  finalValue: {x: 0, y: 250, z: 0}
+  currentTime: 0
+  timeDuration: 2
+  Delay: 2
+  pinpong: 0
+  restart: 0
+--- !u!114 &349682185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349682179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdad25d2307c13a4489b3148bc2633a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  type: 8
+  iniValue: {x: 0, y: -100, z: 0}
+  finalValue: {x: 0, y: -100, z: 0}
+  currentTime: 0
+  timeDuration: 2
+  Delay: 0
+  pinpong: 0
+  restart: 0
 --- !u!1001 &485564465
 Prefab:
   m_ObjectHideFlags: 0
@@ -174,12 +234,12 @@ Prefab:
     - target: {fileID: 224607414762088266, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 157.5
+      value: 273.5
       objectReference: {fileID: 0}
     - target: {fileID: 224607414762088266, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 88.5
+      value: 154
       objectReference: {fileID: 0}
     - target: {fileID: 224607414762088266, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
@@ -264,24 +324,29 @@ Prefab:
     - target: {fileID: 224808253017559408, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 224642184658663204, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208.09879
+      value: 1208.0074
       objectReference: {fileID: 0}
     - target: {fileID: 224266646388670794, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 15.000061
       objectReference: {fileID: 0}
     - target: {fileID: 224266646388670794, guid: 485c230d42b383f4c84e146eda79bb0f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -313.0988
+      value: -1313.0074
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1220062641937216, guid: 485c230d42b383f4c84e146eda79bb0f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 95272531159405042, guid: 485c230d42b383f4c84e146eda79bb0f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 485c230d42b383f4c84e146eda79bb0f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &676820480

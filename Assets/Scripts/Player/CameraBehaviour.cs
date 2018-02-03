@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour
 {
+    public PauseManager pause;
     public Transform target;
 
     private Vector3 velocity = Vector3.zero;
@@ -23,7 +24,10 @@ public class CameraBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 newPosition = target.position + new Vector3(offSet.x, offSet.y, -15);
-        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+        if (!pause.pause)
+        {
+            Vector3 newPosition = target.position + new Vector3(offSet.x, offSet.y, -15);
+            transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+        }
     }
 }

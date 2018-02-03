@@ -90,6 +90,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (!pause.pause)
         {
+            Time.timeScale = 1;
             switch (state)
             {
                 case State.Default:
@@ -109,12 +110,14 @@ public class CharacterBehaviour : MonoBehaviour
                     break;
             }
         }
+        else Time.timeScale = 0;
     }
 
     private void FixedUpdate()
     {
         if (!pause.pause)
         {
+            Debug.Log(Time.timeScale);
             if (state == State.Default)
             {
                 collisions.MyFixedUpdate();
@@ -202,7 +205,6 @@ public class CharacterBehaviour : MonoBehaviour
                 }
             }
         }
-        //if (pause.pause) axis = new Vector2(0, 0);
     }
 
     protected virtual void DefaultUpdate()

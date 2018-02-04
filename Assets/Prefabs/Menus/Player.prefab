@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064585515534416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.48, y: 4.96, z: 0}
+  m_LocalPosition: {x: -25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789669809920172}
@@ -133,9 +133,10 @@ MonoBehaviour:
   cameraBehaviour: {fileID: 0}
   pause: {fileID: 0}
   projectile: {fileID: 1956570658363080, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4868779523393624}
   maxLife: 0
   life: 0
+  lifePowerUp: 0
   meleeDamage: 0
   rangedDamage: 0
   canMove: 1
@@ -151,10 +152,11 @@ MonoBehaviour:
   canWallJump: 0
   isWallJumping: 0
   isDashing: 0
+  hasBoots: 0
   rb: {fileID: 50861343989492248}
   collisions: {fileID: 114675978673681316}
-  boxCollider2D: {fileID: 0}
-  walkSpeed: 3
+  boxCollider2D: {fileID: 61651100007037190}
+  walkSpeed: 5
   runSpeed: 5
   movementSpeed: 0
   horizontalSpeed: 0
@@ -183,7 +185,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 4096
+      m_Bits: 135168
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

@@ -152,6 +152,7 @@ MonoBehaviour:
   canWallJump: 0
   isWallJumping: 0
   isDashing: 0
+  hasBoots: 0
   rb: {fileID: 50449540627099310}
   collisions: {fileID: 114856732123821512}
   boxCollider2D: {fileID: 0}
@@ -184,7 +185,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 4096
+      m_Bits: 135168
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

@@ -117,7 +117,6 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (!pause.pause)
         {
-            Debug.Log(Time.timeScale);
             if (state == State.Default)
             {
                 collisions.MyFixedUpdate();

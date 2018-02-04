@@ -4742,11 +4742,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e44457c3b8669d647a47c6d37d338271, type: 2}
   m_IsPrefabParent: 0
---- !u!61 &1012570706 stripped
-BoxCollider2D:
-  m_PrefabParentObject: {fileID: 61651100007037190, guid: 137faec3e91e8a14d94086d4aa55e972,
-    type: 2}
-  m_PrefabInternal: {fileID: 2045704856}
 --- !u!4 &1012570708 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972,
@@ -5697,6 +5692,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1168471227 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114018502795011570, guid: 637df6c12f9dd9d47b9278c3ac832474,
+    type: 2}
+  m_PrefabInternal: {fileID: 2023107484}
+  m_Script: {fileID: 11500000, guid: 77dcadedb20d1584ebc85a7ff28572df, type: 3}
 --- !u!4 &1179060580 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 9e5adfce4cc25ed429831bb1b10ef76f, type: 3}
@@ -8774,6 +8775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774dc6d5655d71147bdabf7ceacc41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 1168471227}
   target: {fileID: 1012570708}
   smoothTime: 0.5
   offSet: {x: 0, y: 2}
@@ -9586,77 +9588,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4868779523393624, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
         type: 2}
       propertyPath: cameraBehaviour
       value: 
       objectReference: {fileID: 1798539989}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: boxCollider2D
-      value: 
-      objectReference: {fileID: 1012570706}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1012570708}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: walkSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: runSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: onLadderSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: jumpWalkForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: jumpRunForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: jumpForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: wallJumpForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064585515534416, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472661408315680, guid: 137faec3e91e8a14d94086d4aa55e972,
-        type: 2}
-      propertyPath: filter.layerMask.m_Bits
-      value: 135168
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 137faec3e91e8a14d94086d4aa55e972, type: 2}
   m_IsPrefabParent: 0

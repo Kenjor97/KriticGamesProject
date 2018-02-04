@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
             // salto del player
             InputJump();
             // alternar entre caminar y correr para el player
-            InputRun();
+            //InputRun();
             // alternar entre agachado y no agachado
             InputCrouch();
             // dash
@@ -34,9 +34,9 @@ public class InputManager : MonoBehaviour
             // ataques
             InputAttack();
             InputAttack2();
+            // god mode
+            InputGodMode();
         }
-        // god mode
-        InputGodMode();
     }
 
     void InputPause()
@@ -63,19 +63,19 @@ public class InputManager : MonoBehaviour
             player.JumpStart();
         }
     }
-    void InputRun()
-    {
-        if(Input.GetButtonDown("Run"))
-        {
-            Debug.Log("Run");
-            player.isRunning = true;
-        }
-        if(Input.GetButtonUp("Run"))
-        {
-            player.isRunning = false;
-            Debug.Log("Walk");
-        }
-    }
+    //void InputRun()
+    //{
+    //    if(Input.GetButtonDown("Run"))
+    //    {
+    //        Debug.Log("Run");
+    //        player.isRunning = true;
+    //    }
+    //    if(Input.GetButtonUp("Run"))
+    //    {
+    //        player.isRunning = false;
+    //        Debug.Log("Walk");
+    //    }
+    //}
     void InputCrouch()
     {
         if(Input.GetButton("Crouch"))
@@ -86,7 +86,7 @@ public class InputManager : MonoBehaviour
     }
     void InputDash()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetButtonDown("Dash"))
         {
             Debug.Log("Dash");
             player.Dash();
@@ -94,7 +94,7 @@ public class InputManager : MonoBehaviour
     }
     void InputAttack()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             Debug.Log("Melee Attack");
             player.Attack();
@@ -102,7 +102,7 @@ public class InputManager : MonoBehaviour
     }
     void InputAttack2()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             Debug.Log("Ranged Attack");
             player.Attack2();

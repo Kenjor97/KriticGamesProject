@@ -12,6 +12,7 @@ TagManager:
   - EndingWin
   - EndingLose
   - EndingImage
+  - PowerUp
   layers:
   - Default
   - TransparentFX

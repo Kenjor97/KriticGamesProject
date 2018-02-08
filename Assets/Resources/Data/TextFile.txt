@@ -1,0 +1,19 @@
+ID	Spanish	English
+Enter	Pulsa Enter para	Press ENTER To
+Start	Empezar	Start
+Continue	Continuar	Continue
+New Game	Nuevo Juego	New Game
+Settings	Opciones	Settings
+Exit	Salir	Exit
+Graphics	Gráficos	Graphics
+Audio	Audio	Audio
+Language	Idioma	Language
+Resolution	Resolución	Resolution
+Quality	Calidad	Quality
+Brightness	Brillo	Brightness
+Fullscreen	Full Screen	Full Screen
+Master	Master	Master
+Music	Música	Music
+Effects	Efectos	Effects
+English	Inglés	English
+Spanish	Español	Spanish

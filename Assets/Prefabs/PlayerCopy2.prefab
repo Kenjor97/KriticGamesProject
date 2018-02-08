@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4227843344213222}
   - component: {fileID: 50485642130775710}
   - component: {fileID: 61924352758147922}
+  - component: {fileID: 95147859264043904}
   - component: {fileID: 114301430598806302}
   - component: {fileID: 114983074266451890}
   m_Layer: 8
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411471342109876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.4823065, y: 7.099775, z: 0}
+  m_LocalPosition: {x: -8.09, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4499365750740808}
@@ -118,6 +119,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1685021, y: 1.44}
   m_EdgeRadius: 0.1
+--- !u!95 &95147859264043904
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411471342109876}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114301430598806302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +203,7 @@ MonoBehaviour:
   pause: {fileID: 0}
   projectile: {fileID: 1956570658363080, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
   playerTransform: {fileID: 0}
+  anim: {fileID: 0}
   maxLife: 0
   life: 0
   lifePowerUp: 0

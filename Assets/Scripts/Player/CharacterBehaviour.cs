@@ -11,6 +11,7 @@ public class CharacterBehaviour : MonoBehaviour
     public PauseManager pause;
     public GameObject projectile;
     public Transform playerTransform;
+    public Animator anim;
     public int maxLife;
     public int life;
     public int lifePowerUp;
@@ -18,6 +19,7 @@ public class CharacterBehaviour : MonoBehaviour
     public int rangedDamage;
     [Header("State")]
     public bool canMove = true;
+    public bool isMoving = false;
     public bool canJump = true;
     public bool isFacingRight = true;
     public bool isJumping = false;
@@ -123,6 +125,9 @@ public class CharacterBehaviour : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(8, 9, false);
                 canRecieveDamage = true;
             }
+
+            if (axis.x != 0) isMoving = true;
+            else if (axis.x == 0) isMoving = false;
 
             if (isJumping)
             {

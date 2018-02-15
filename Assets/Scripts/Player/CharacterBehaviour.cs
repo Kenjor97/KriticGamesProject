@@ -128,7 +128,7 @@ public class CharacterBehaviour : MonoBehaviour
 
             if (axis.x != 0) isMoving = true;
             else if (axis.x == 0) isMoving = false;
-            if (isMoving) anim.SetBool("isMoving", true);
+            if (isMoving && collisions.isGrounded) anim.SetBool("isMoving", true);
             else
             {
                 axis.x = 0;

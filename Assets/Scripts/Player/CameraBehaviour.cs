@@ -7,8 +7,8 @@ public class CameraBehaviour : MonoBehaviour
     public PauseManager pause;
     public Transform target;
 
-    private Vector3 velocity = Vector3.zero;
-    public float smoothTime;
+    //private Vector3 velocity = Vector3.zero;
+    //public float smoothTime;
     public Vector2 offSet = Vector2.zero;
     // Use this for initialization
     void Start ()
@@ -27,7 +27,8 @@ public class CameraBehaviour : MonoBehaviour
         if (!pause.pause)
         {
             Vector3 newPosition = target.position + new Vector3(offSet.x, offSet.y, -15);
-            transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+            //transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+            transform.position = newPosition;
         }
     }
 }

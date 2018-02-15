@@ -185,12 +185,14 @@ MonoBehaviour:
   pause: {fileID: 0}
   projectile: {fileID: 1956570658363080, guid: 47cdb58818984a3429c0df919f42cb4e, type: 2}
   playerTransform: {fileID: 0}
+  anim: {fileID: 0}
   maxLife: 0
   life: 0
   lifePowerUp: 0
   meleeDamage: 0
   rangedDamage: 0
   canMove: 1
+  isMoving: 0
   canJump: 1
   isFacingRight: 1
   isJumping: 0
@@ -203,6 +205,7 @@ MonoBehaviour:
   canWallJump: 0
   isWallJumping: 0
   isDashing: 0
+  hasBoots: 0
   rb: {fileID: 50385326969613980}
   collisions: {fileID: 114876767181552114}
   boxCollider2D: {fileID: 0}

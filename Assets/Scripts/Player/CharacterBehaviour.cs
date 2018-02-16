@@ -32,8 +32,11 @@ public class CharacterBehaviour : MonoBehaviour
     public bool canWallJump = false;
     public bool isWallJumping = false;
     public bool isDashing = false;
-    [Header("Power Ups")]
+    [Header("Power Ups And Keys")]
     public bool hasBoots = false;
+    public bool hasRedKay = false;
+    public bool hasBlueKey = false;
+    public bool hasGreenKey = false;
     [Header("Physics")]
     public Rigidbody2D rb;
     public Collisions collisions;

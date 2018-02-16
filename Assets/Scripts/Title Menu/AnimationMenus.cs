@@ -5,8 +5,11 @@ using UnityEngine;
 public class AnimationMenus : MonoBehaviour
 {
     public MouseCursor cursor;
-    public Animator woodTable;
-    public Animator anvil;
+    //public Animator woodTable;
+    //public Animator anvil;
+    public GameObject tableWood;
+    public GameObject chainAnvil;
+    public GameObject chains;
     public GameObject pressEnterText;
     public GameObject menuButtons;
     public AudioSource chainsSound;
@@ -16,8 +19,11 @@ public class AnimationMenus : MonoBehaviour
 	void Start ()
     {
         cursor = GetComponent<MouseCursor>();
-        woodTable.enabled = false;
-        anvil.enabled = false;
+        // woodTable.enabled = false;
+        //anvil.enabled = false;
+        tableWood.SetActive(false);
+        chainAnvil.SetActive(false);
+        chains.SetActive(true);
         pressEnterText.SetActive(true);
         menuButtons.SetActive(false);
         chainsSound = GetComponent<AudioSource>();
@@ -31,10 +37,13 @@ public class AnimationMenus : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Pressed Enter");
-            woodTable.enabled = true;
-            anvil.enabled = true;
-            anvil.Rebind();
-            woodTable.Rebind();
+            //woodTable.enabled = true;
+            //anvil.enabled = true;
+            //anvil.Rebind();
+            //woodTable.Rebind();
+            tableWood.SetActive(true);
+            chainAnvil.SetActive(true);
+            chains.SetActive(false);
             pressEnterText.SetActive(false);
             menuButtons.SetActive(true);
             chainsSound.Play();

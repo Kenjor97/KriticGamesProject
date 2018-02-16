@@ -33,3 +33,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Audio/title_theme.wav.meta

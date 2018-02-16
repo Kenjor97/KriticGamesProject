@@ -416,6 +416,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
     public void Attack2()
     {
+        anim.SetTrigger("attack01");
         Instantiate(projectile, new Vector3(this.transform.position.x + attackBoxPos.x, this.transform.position.y + attackBoxPos.y, 0), new Quaternion(0, 0, 0, 0));
     }
     public void RestoreLife(int heal)

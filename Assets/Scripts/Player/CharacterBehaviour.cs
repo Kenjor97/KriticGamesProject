@@ -27,8 +27,6 @@ public class CharacterBehaviour : MonoBehaviour
     public bool crouch = false;
     public bool canDash = true;
     public bool canRecieveDamage = true;
-    //public bool isLookingUp = false;
-    //public bool isLookingDown = false;
     public bool canDoubleJump = false;
     public bool onLadder = false;
     public bool canWallJump = false;
@@ -63,7 +61,6 @@ public class CharacterBehaviour : MonoBehaviour
     public float crouchYOffset;
     [Header("Other")]
     [SerializeField] float dashCD;
-    //[SerializeField] float wallJumpCD;
     public Vector2 attackBoxPos;
     public Vector2 attackBoxSize;
     public ContactFilter2D filter;
@@ -81,7 +78,6 @@ public class CharacterBehaviour : MonoBehaviour
         meleeDamage = 5;
         rangedDamage = 2;
         dashCD = 0.2f;
-        //wallJumpCD = 0.2f;
         standYSize = boxCollider2D.size.y;
         crouchYSize = boxCollider2D.size.y / 2;
         standYOffset = boxCollider2D.offset.y;
@@ -144,7 +140,6 @@ public class CharacterBehaviour : MonoBehaviour
 
             if (isWallJumping)
             {
-                //wallJumpCD -= Time.deltaTime;
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 //rb.AddForce(new Vector2(-wallJumpForce, jumpForce), ForceMode2D.Impulse);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -158,12 +153,6 @@ public class CharacterBehaviour : MonoBehaviour
                     rb.AddForce(Vector2.right * wallJumpForce, ForceMode2D.Impulse);
                     //rb.AddForce(new Vector2(1 * wallJumpForce, 1 * wallJumpForce), ForceMode2D.Impulse);
                 }
-                //if(wallJumpCD <=0)
-                //{
-                //    wallJumpCD = 0.2f;
-                //    isWallJumping = false;
-                //    canWallJump = true;
-                //}
                 isWallJumping = false;
                 canWallJump = true;
             }
@@ -377,11 +366,6 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(collisions.isGrounded)
         {
-            /*if(isLookingDown)
-            {
-                Debug.Log("bajar plataforma");
-            }*/
-
             if(isRunning) jumpForce = jumpRunForce;
             else jumpForce = jumpWalkForce;
             Jump();
@@ -417,6 +401,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
     public void Attack()
     {
+        anim.SetTrigger("attack00");
         Vector3 pos = this.transform.position + (Vector3)attackBoxPos;
         Collider2D[] results = new Collider2D[1];
 
